@@ -1,0 +1,33 @@
+.btn__small {
+    width: 165px;
+    border: none;
+    background: linear-gradient(to bottom, #cf5834 ,#a13a1b);
+    padding: 15px 0;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+._smallround {
+    border-radius: 10px;
+}
+
+._smalllight {
+    background: #ffb097;
+}
+
+._smallplain {
+    background: #e97d5c;
+}
+
+
+@media screen and (max-width: 650px) {
+    .btn__small {
+        width: 125px;
+        font-size: 13px;
+        font-weight: 800;
+        padding: 13px 0;
+    }
+}

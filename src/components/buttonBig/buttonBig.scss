@@ -1,0 +1,42 @@
+.btn__big {
+    width: 200px;
+    border: none;
+    background-color: #ca6040;
+    padding: 15px 0;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+._bigplain {
+    background: transparent;
+    border: 3px solid #a13a1b;
+    padding: 10px 0;
+    font-size: 15px;
+    color:#a13a1b;
+    width: 300px;
+}
+
+._plainBig {
+    width: 300px;
+}
+
+
+@media screen and (max-width: 650px) {
+    .btn__big {
+        width: 175px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    ._bigplain {
+        width: 200px;
+        padding: 10px 0;
+    }
+
+    ._plainBig {
+        width: 200px;
+    }
+}

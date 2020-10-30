@@ -1,0 +1,83 @@
+.contact-office-header {
+    box-shadow: 4px 4px 28px 9px gainsboro;
+    border-radius: 25px;
+    width: 30%;
+    margin: 0 5%;
+    justify-content: center;
+    height: 22rem;
+    justify-content: center;
+    background-color: rgb(243,243,243);
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.contact-office {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    color: rgb(248,166,139);
+    font-weight: 600;
+}
+
+.title {
+    color: rgb(248,166,139);
+    font-weight: 600;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 650px) {
+    .contact-office-header {
+        box-shadow: 4px 4px 16px 20px gainsboro;
+        border-radius: 25px;
+        box-decoration-break: inherit;
+        width: 55% !important;
+        margin: auto;
+        justify-content: center;
+        height: 21rem !important;
+        justify-content: center;
+        background-color: rgb(243,243,243);
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+    
+    .contact-office {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .icon {
+        color: rgb(248,166,139);
+        font-weight: 600;
+    }
+    
+    .title {
+        color: rgb(248,166,139);
+        font-weight: 600;
+        font-size: 24px;
+    }
+}
+
+.lorem {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 10px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 650px) {
+    .lorem {
+        font-size: 12px !important;
+        margin: 0 10px;
+        font-weight: bold;
+        text-align: center;    
+        padding: 10p 0 0 0;
+
+    }
+}

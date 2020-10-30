@@ -1,0 +1,17 @@
+.about_head {
+    height: 400px;
+    width: 100%;
+    background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603718224/PC/About_Us_Contact_Us_qorrn1.png');
+    background-position: center;
+    background-size: cover;
+}
+
+
+@media screen and (max-width: 650px) {
+    .about_head {
+        background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603717658/About_i94pti.png');
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+}

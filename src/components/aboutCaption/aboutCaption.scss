@@ -1,0 +1,27 @@
+.about_caption {
+    text-align: center;
+    .about_caption_main {
+        color: #fb7346;
+        font-size: 100px;
+        font-weight: 900;
+        .about_caption_sub {
+            color: #fff;
+        }
+    }
+    .about_caption_aside {
+        width: 85%;
+        margin-left: 9vw;
+        color: #fff;
+    }
+}
+@media screen and (max-width: 650px)  {
+    .about_caption {
+        margin: 40px auto;
+        display: grid;
+        place-items: center;
+        .about_caption_main {
+            font-size: 5.4rem;
+            text-align: center;
+        }
+    }
+}

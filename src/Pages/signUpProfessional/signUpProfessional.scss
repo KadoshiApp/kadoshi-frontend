@@ -1,0 +1,131 @@
+.professional__main {
+    height: 97vh;
+    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603723051/PC/Register_Professional_tki3wo.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .professional__main_caption {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+
+        :nth-child(1) {
+            font-size: 4.5rem;
+            font-weight: 700;
+        }
+
+        :nth-child(2) {
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 400;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.professional__main_inputs {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+    margin: 10% auto 0;
+
+    
+    select {
+        height: 46px;
+    }
+    
+    select,
+    input {
+        background-color:rgba(207, 207, 207, 0.2);
+        color:white;
+        outline:none;
+        border: 2px solid #f87e59;
+        font-style: italic;
+        border-radius: 8px;
+        
+        option {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+            font-style: normal;
+            font-family: Roboto;
+        }
+    }
+
+    select::placeholder, 
+    input::placeholder {
+        color: #fff;
+        font-size: 15px;
+    }
+    
+    select:focus
+    input:focus {
+        background-color:rgba(163, 163, 163, 0.2);
+    }
+    
+}
+
+.professional__btn {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+
+@media screen and (max-width: 650px) {
+    .professional__main {
+        .professional__main_caption {
+            :nth-child(1) {
+                font-size: 1.95rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            :nth-child(2) {
+                font-size: 1rem;
+                font-style: italic;
+                font-weight: 400;
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .professional__main_inputs {
+        width: 70%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.6rem;
+        margin: 4% auto 0;
+
+        select {
+            height: 40px;
+            font-size: 13px;
+        }
+
+        input {
+            height: 32px;
+        }
+
+        select,
+        input {
+            outline:none;
+            border-radius: 0;
+        }
+
+        select::placeholder, 
+        input::placeholder {
+            color: #fff;
+            font-size: 13px;
+        }
+    }
+
+    .professional__btn {
+        margin-top: 3%;
+    }
+}
