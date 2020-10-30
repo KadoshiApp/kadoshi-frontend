@@ -9,6 +9,8 @@ import SignUpProfessional from './Pages/signUpProfessional/signUpProfessional';
 import SignUpCustomers from './Pages/signUpCustomers/signUpCustomers'
 import ContactPage from './Pages/contactPages/ContactPage';
 
+
+
 import './App.css';
 
 function App() {
