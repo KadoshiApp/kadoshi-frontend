@@ -1,17 +1,16 @@
 .about_body {
     background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722230/PC/Illustration_5_-_About_Us_a5maf0.png), url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png), url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
-    height: 147vh;
+    height: 171vh;
     width: 100%;
-    margin-top: -250px;
+    margin-top: -52vh;
     background-position: center, right, bottom left;
     background-size: 70%, 60%, 50%;
     background-repeat: no-repeat;
     p {
-        padding-top: 115vh;
-        padding-bottom: 2vh;
+        padding-top: 118vh;
         width: 75%;
         line-height: 30px;
-        margin-left: 20vh;
+        margin-left: 15vh;
         text-align: center;
         font-weight: 440;
         text-transform: uppercase;
@@ -20,10 +19,10 @@
 
 @media screen and (max-width: 650px) {
     .about_body {
-        margin-top: -450px;
-        height: 170vh;
+        margin-top: -68vh;
+        height: 172vh;
         p {
-            padding-top: 115vh;
+            padding-top: 110vh;
             font-size: smaller;
             margin-left: 10vh;
 
