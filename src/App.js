@@ -6,7 +6,8 @@ import SignIn from './Pages/signIn/signIn';
 import AboutPage from './Pages/aboutPage/aboutPage';
 import AccountType from './Pages/accountType/accountType';
 import SignUpProfessional from './Pages/signUpProfessional/signUpProfessional';
-import SignUpCustomers from './Pages/signUpCustomers/signUpCustomers'
+import SignUpCustomers from './Pages/signUpCustomers/signUpCustomers';
+import ContactPage from './Pages/contactPages/ContactPage';
 
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
 				<Route exact path="/accountType" component={AccountType} />
 				<Route exact path="/professional" component={SignUpProfessional} />
 				<Route exact path="/customers" component={SignUpCustomers} />
+				<Route exact path="/contact" component={ContactPage} />
 			</Switch>
 		</div>
 	);
