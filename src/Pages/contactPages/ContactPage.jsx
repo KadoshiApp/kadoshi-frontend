@@ -11,10 +11,7 @@ import { FooterThin, FooterWide} from '../../components/footer/footer';
 import './contactPage.scss';
 
 const ContactPage = () => {
-
     const icona = <img src={Header} alt='header' />
-
-
     return (
         <div>
         <div className='contact-page'>

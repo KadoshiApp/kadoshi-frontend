@@ -1,0 +1,45 @@
+.update__profile_inputs {
+    width: 70%;
+    margin: 0 auto;
+
+    input {
+        color: #000;
+        outline:none;
+        border: 2px solid #f87e59;
+        border-radius: 8px;
+    }
+
+    input::placeholder {
+        color: #000;
+        font-size: 14px;
+    }
+
+    input:focus {
+        background-color:rgba(163, 163, 163, 0.2);
+    }
+
+    select {
+        color:#000;
+        outline:none;
+        border: 2px solid #f87e59;
+        border-radius: 8px;
+        font-size: 15px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+
+        option {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+            font-style: normal;
+            font-family: Roboto;
+        }
+    }
+
+    select::placeholder {
+        color: #000;
+    }
+
+    select:focus {
+        background-color:rgba(163, 163, 163, 0.2);
+    }
+}
