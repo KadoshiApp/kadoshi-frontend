@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Icon, Input, InputGroup, InputLeftElement, Select, Stack } from "@chakra-ui/core";
+import { Icon, Input, InputGroup, InputLeftElement, Stack } from "@chakra-ui/core";
 
 import TopNav from "../../components/topNav/topNav";
 import { FooterThin } from "../../components/footer/footer";
