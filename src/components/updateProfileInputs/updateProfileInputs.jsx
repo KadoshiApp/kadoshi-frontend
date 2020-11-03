@@ -1,18 +1,18 @@
 import React from 'react'
 import { Icon, Input, InputGroup, InputLeftElement, Stack, Select } from "@chakra-ui/core";
-
+import { MdAccountBox } from "react-icons/md";
 
 import './updateProfileInputs.scss';
 
 const UpdateProfileInputs = () => {
     return (
         <div className="update__profile_inputs">
-            <Stack spacing={8}>
+            <Stack spacing={10}>
                 <InputGroup>
                     <InputLeftElement
-                        children={<Icon name="at-sign" color="#f87e59" size="18px" />}
+                        children={<MdAccountBox size='20px' />}
                     />
-                    <Input type="text" placeholder="Full Name" />
+                    <Input type='text' placeholder='Full Name' />
                 </InputGroup>
 
                 <Select placeholder='Select Service Category'>
@@ -29,7 +29,7 @@ const UpdateProfileInputs = () => {
 
                 <InputGroup>
                     <InputLeftElement
-                        children={<Icon name='email' color="#f87e59" size='20px' />}
+                        children={<Icon name='email' size='20px' />}
                     />
                     <Input type='email' placeholder='Email' />
                 </InputGroup>
