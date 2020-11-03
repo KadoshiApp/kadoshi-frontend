@@ -1,20 +1,162 @@
+.update__profile {
+    background-color: #FDD3FE;
+}
+
 .update__profile_caption {
     height: 400px;
     width: 100%;
     background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603722685/PC/Services_bgqfuz.png');
     background-position: top;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+
+    .update__profile_brand {
+        text-align: center;
+        color: #fff;
+
+        :nth-child(1) {
+            font-size: 3.6rem;
+            font-weight: 700;
+
+            span {
+                font-size: 6.2rem;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: #f87e59;
+            }
+        }
+
+        :nth-child(2) {
+            width: 60%;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.update__profile_head {
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 40px 0;
 }
 
 .update__profile_body {
-    height: 800px;
+    height: 1200px;
     width: 85%;
     margin: 0 auto;
+    margin-bottom: 150px;
     border-radius: 15px;
     background-color: #FDD3FE;
+    box-shadow: 2px 4px 25px 12px #777;
+
+    .update__img_caption {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
 
     .update__profile_img {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        padding: 40px 0;
+        position: relative;
 
+        .update__profile_overlay {
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+            height: 300px;
+            border-radius: 50%;
+        }
+    }
+
+    .update__upload_work {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        text-align: center;
+        width: 30%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .update__upload_work:hover {
+        opacity: 0.7;
+    }
+
+    .update__profile_btn {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .update__profile_caption {
+        background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717812/Services_-_No_Overlay_fanqmh.png);
+
+        .update__profile_brand {
+            :nth-child(1) {
+                font-size: 2rem;
+
+                span {
+                    font-size: 4rem;
+                    font-weight: 900;
+                }
+            }
+
+            :nth-child(2) {
+                width: 85%;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .update__profile_head {
+        font-size: 1.3rem;
+        margin: 30px 0;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .update__profile_body {
+        height: 900px;
+        box-shadow: 2px 3px 10px 6px #888;
+
+        .update__img_caption {
+            font-size: 1.1rem;
+        }
+
+        .update__profile_img {
+            width: 200px;
+            height: 200px;
+
+            .update__profile_overlay {
+                height: 200px;
+                width: 200px;
+                font-size: 1.4rem;
+            }
+
+            img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        .update__upload_work {
+            margin-top: 25px;
+            font-size: 1rem;
+        }
     }
 }
