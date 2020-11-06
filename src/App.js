@@ -9,6 +9,7 @@ import SignUpProfessional from './Pages/signUpProfessional/signUpProfessional';
 import SignUpCustomers from './Pages/signUpCustomers/signUpCustomers';
 import ContactPage from './Pages/contactPages/ContactPage';
 import ProfessionalPage from './Pages/professionalPage/ProfessionalPage';
+import UpdateProfile from './Pages/updateProfile/updateProfile';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
 				<Route exact path="/customers" component={SignUpCustomers} />
 				<Route exact path="/contact" component={ContactPage} />
 				<Route exact path="/services" component={ProfessionalPage} />
+				<Route exact path="/profile" component={UpdateProfile} />
 			</Switch>
 		</div>
 	);
