@@ -1,0 +1,76 @@
+.service-profile-info {
+    width: 80%;
+    height: 27rem;
+    margin: auto;
+    margin-bottom: 30px;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 4px 4px 28px 9px rgb(228,210,204);
+
+}
+
+.profile-pic {
+    display: inline-block;
+    width: 150px;
+    margin-top: 10px;
+    height: 150px;
+    border-radius: 50%;
+    // background-image: url('https://thumbs.dreamstime.com/z/carpenter-working-workshop-28992842.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+.profile-name {
+    margin: 0 0 0 20px;
+    font-size: 25px;
+    font-weight: 500;
+
+    span {
+        font-size: 20px;
+    }
+
+}
+
+.body-button {
+    // margin-top: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    .service-profile-info {
+        width: 33%;
+        height: 20rem;
+        margin-bottom: 30px !important;
+        margin: auto;
+        justify-content: center;
+        border-radius: 50px;
+        box-shadow: 4px 4px 28px 9px rgb(228,210,204);
+    
+    }
+    
+    .profile-pic {
+        display: inline-block;
+        width: 100px;
+        margin-top: 10px;
+        height: 100px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+    
+    .profile-name {
+        margin: 0 0 0 10px;
+        font-size: 20px;
+        font-weight: 400;
+    
+        span {
+            font-size: 14px;
+        }
+    
+    }
+    
+    .body-button {
+        width: 20%;
+    }
+}
