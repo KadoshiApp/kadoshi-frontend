@@ -18,6 +18,10 @@
     grid-column-gap: -0px;
 }
 
+.professional_optioon {
+    padding-bottom: 25px;
+}
+
 @media screen and (max-width: 650px) {
     .service-body-background {
         background-color: rgb(244,225,219);
@@ -32,7 +36,8 @@
     }
 
     .professional-data {
-        margin-top: 20px;
+
+        margin: 40px 20% 0 40%;
         display: inline;
         // display: grid;
         // grid-template-columns: 1fr 1fr 1fr;

@@ -1,7 +1,5 @@
 import React from 'react'
-
-import ButtonSmall from'../buttonSmall/buttonSmall';
-import { Flex, Icon} from "@chakra-ui/core";
+// import Rating from '@material-ui/lab/Rating';
 
 import './professionalProfile.scss';
 
@@ -16,19 +14,23 @@ function ProfessionalProfile({data}) {
                     <div className='profile-name'>
                     {data.name}
                     <br /><span>{data.job}</span>
-                    <div>
-                    <Flex align='center' justifyContent='center'>
-                    <Icon name="star" size="22px" color="red.500" p={[0, 2]} />
-                    <Icon name="star" size="22px" color="red.500" p={[0, 2]} />
-                    <Icon name="star" size="22px" color="red.500" p={[0, 2]} />
-                    <Icon name="star" size="22px" color="red.500" p={[0, 2]} />
-                    <Icon name="star" size="22px" color="red.500" p={[0, 2]} />
-                    </Flex>
+                    <div className='profile-name'>
+                    {/* <Rating
+                                name="hover-feedback"
+                                value={value}
+                                precision={0.5}
+                                onChange={(event, newValue) => {
+                                    setValue(newValue);
+                                }}
+                                onChangeActive={(event, newHover) => {
+                                    setHover(newHover);
+                                }}
+                                />
+                                {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>} */}
                     <span>Rating:4.1</span></div>
-                    <div className='body-button'>
-                        <ButtonSmall caption='VIEW' />
-                    </div>
-                    </div>
+                        <button className='body-button'>VIEW</button>
+                        
+                                 </div>
                     </div>
                     </div>
     )

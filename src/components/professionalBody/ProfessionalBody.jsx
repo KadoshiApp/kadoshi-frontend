@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfessionalOption from '../professionalOption/ProfessionalOption';
 import ProfessionalProfile from '../professionals-profile/ProfessionalProfile';
 
 import './professionalBody.scss';
@@ -40,7 +41,7 @@ let data = [
         id: 5,
         name: 'Ademola Allen',
         job: 'Carpenter',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRHVXXiOqTZMjCTvOoOKMnTlP_oITRcfjiGXA&usqp=CAU',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsUvkw0E0bXnCWcNafZxRYImXUrzGz9uNm1w&usqp=CAU',
         star: 5,
         rating: 5
     },
@@ -48,7 +49,7 @@ let data = [
         id: 6,
         name: 'Niche Mahmud',
         job: 'Barber',
-        image: 'https://lh3.googleusercontent.com/proxy/AEnZBdSZbFT2kAsmFaa_W9R2Uhf9mtJN_912EKE62k9SM1MxmLOrqLfQYRMdlnVntsqP4wC_djT0N0_7ZFrU9qj8eqpGAz_0D5fIzfuxKfXSWNXQAc0AlnoeY4JoF5eFCwxpMLUtTLZuEL9JTZBhSztRZDNlOfRP5gi3DcI9V7RD',
+        image: 'https://ae01.alicdn.com/kf/H5dd556cdad0840a4ace61c04086181013/cordless-finishing-hair-trimmer-professional-barber-shop-hair-clipper-beard-trimer-for-men-usb-hair-cutter.jpg_q50.jpg',
         star: 5,
         rating: 5
     }
@@ -58,6 +59,9 @@ const ProfessionalBody = props => {
 
     return (
         <div className='service-body-background'>
+            <div className='professional_optioon'>
+                <ProfessionalOption />
+            </div>
             <div className='professional-view'>Available Professonals</div>
             <div className='professional-data'>
             {data.map((data, index)=> (
