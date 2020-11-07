@@ -1,0 +1,47 @@
+.professional-option {
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.text-list {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.option-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3% auto 0;
+    
+    select {
+        height: 46px;
+    }
+    
+    select,
+    input {
+        background-color: #F9E6E0;
+        color: black;
+        outline:none;
+        border: 2px solid #f87e59;
+        border-radius: 8px;
+        
+        option {
+            background-color:  #F9E6E0;
+            text-transform: uppercase;
+            font-style: normal;
+            font-family: Roboto;
+        }
+    }
+
+    select::placeholder, 
+    input::placeholder {
+        color: black;
+        font-size: 15px;
+    }
+    
+    select:focus
+    input:focus {
+        background-color:  #F9E6E0;
+    }
+}
