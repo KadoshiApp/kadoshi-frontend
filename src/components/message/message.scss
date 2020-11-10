@@ -1,0 +1,26 @@
+.__success {
+    background-color: #55c57a;
+}
+
+.__error {
+    background-color: #ff7730;
+}
+
+.__error,
+.__success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    position: fixed;
+    text-transform: uppercase;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: 35px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
