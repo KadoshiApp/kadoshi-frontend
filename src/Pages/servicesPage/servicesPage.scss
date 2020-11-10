@@ -1,0 +1,39 @@
+.services_body {
+    background-image: url("https://res.cloudinary.com/kadoshi/image/upload/v1603722685/PC/Services_bgqfuz.png");
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: #f4e1db;
+}
+.service_about {
+    display: flex;
+}
+.horiz {
+    border: 2px solid;
+}
+
+.service_basic_info {
+    text-align: center;
+    width: 75%;
+    margin: auto;
+}
+.service_basic_info_container {
+    background-color: #f4e1db;
+    font-size: x-large;
+    font-weight: 500;
+}
+.service_basic_info_about {
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    padding-left: 50px;
+}
+
+.carousel_top {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    }
