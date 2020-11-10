@@ -1,0 +1,23 @@
+.carousel_container {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    overflow-x: auto;
+    overflow-y: none;
+    height: 50vh;
+}
+.carousel {
+    height: 300px;
+    justify-content: space-evenly;
+    padding: 0px 50px 0px 50px;
+}
+.carousel img {
+    max-height: 100%;
+    width: 25vh;
+    margin: auto;
+    filter: brightness(50%);
+    display: block;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+
+}

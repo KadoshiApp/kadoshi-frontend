@@ -1,0 +1,30 @@
+.service_rating_container {
+    height: 40vh;
+    width: 75%;
+    margin: auto;
+    display: flex;
+    padding-top: 10vh;
+    justify-content: space-around;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f4e1db;
+}
+.service_rating img {
+    max-height: 100%;
+    max-width: 25vh;
+    border-radius: 50%;
+}
+.professional_name{
+    font-size: xx-large;
+    font-weight: 500;
+}
+.professional_prof {
+    font-size: large;
+    margin-bottom: 20px;
+}
+.generated_number {
+    margin-bottom: 50px;
+}
+.star_bottom_left {
+    margin-right: 20px;
+}
