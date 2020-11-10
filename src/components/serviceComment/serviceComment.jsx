@@ -34,7 +34,7 @@ const ServiceComment = () => {
       <Stack>
         <InputGroup size="lg">
         <Input placeholder="Add your own comment" />
-        <InputRightAddon children="COMMENT" className="comment_button"/>
+        <InputRightAddon children="COMMENT" background="#fb7346"/>
         </InputGroup>
           </Stack>
           <div className="service_button">
