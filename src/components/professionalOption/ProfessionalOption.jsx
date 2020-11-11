@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Select } from "@chakra-ui/core";
+import { Select } from "@chakra-ui/core";
 import ButtonSmall from "../../components/buttonSmall/buttonSmall";
 
 import './professionalOption.scss';
@@ -8,8 +8,7 @@ function ProfessionalOption() {
 	return (
 		<div className='professional-option'>
 			<div className='text-list'>Sort Service Listing</div>
-			<div className='option-header'>
-			<Flex  margin='30px 0'>
+			<div className='option-_header'>
 			<Select placeholder='Select Product Category' variant='outline' marginRight='30px'>
                                     <option value='Fashion Design'> Fashion Design </option>
                                     <option value='Hair Styling'> Hair Styling </option>
@@ -26,9 +25,8 @@ function ProfessionalOption() {
                                     <option value='abuja'> Abuja </option>
                                     <option value='porthacourt'> PortHacourt </option>
                                 </Select>
-			</Flex>
 		</div>
-		<div className='professional--button'>
+		<div className='professional__button'>
                         <ButtonSmall caption='go!' roundEdge />
                     </div>	
 		</div>
