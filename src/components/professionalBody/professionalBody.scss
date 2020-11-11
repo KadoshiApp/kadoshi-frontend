@@ -9,12 +9,13 @@
     font-size: 30px;
     // padding: 60px;
     font-weight: 500;
+    margin-bottom: 50px;
 }
 
 .professional-data {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
     grid-column-gap: -0px;
 }
 
