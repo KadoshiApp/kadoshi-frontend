@@ -16,7 +16,7 @@ const UpdateProfile = () => {
 				<TopNav />
                 <div className='update__profile_brand'>
                     <div>Update<span>Profile</span></div>
-                    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laboriosam quibusdam totam autem ipsa odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet. </div>
+                    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laboriosam totam autem ipsa odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet. </div>
                 </div>
 			</div>
 			<div>

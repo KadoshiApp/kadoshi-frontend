@@ -8,7 +8,7 @@ function ProfessionalProfile({data}) {
     return (
         <div className='service-profile-info'>
                 <div className='profile-pic'>
-                    <img src={data.image} alt='dataImage' className='profile-pic' />
+                    <img src={data.image} className='profile-pic' alt="img"/>
                 </div>
                 <div className='profile-info'>
                     <div className='profile-name'>

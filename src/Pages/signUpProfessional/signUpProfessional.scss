@@ -31,10 +31,10 @@
 
 .professional__main_inputs {
     width: 70%;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-gap: 4rem;
-    margin: 10% auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+    margin: 5% auto 0;
 
     
     select {
@@ -79,6 +79,7 @@
 
 @media screen and (max-width: 650px) {
     .professional__main {
+        height: 97%;
         .professional__main_caption {
             :nth-child(1) {
                 font-size: 1.95rem;
@@ -100,7 +101,7 @@
         width: 70%;
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 1.6rem;
+        grid-gap: 1.9rem;
         margin: 4% auto 0;
 
         select {
@@ -127,5 +128,6 @@
 
     .professional__btn {
         margin-top: 3%;
+        padding-bottom: 3%;
     }
 }

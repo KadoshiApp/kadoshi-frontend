@@ -1,10 +1,10 @@
 .home__head {
-    height: 720px;
+    height: 760px;
     width: 100%;
-    background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603722032/PC/Hero_Image_2_ei2r2r.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722032/PC/Hero_Image_2_ei2r2r.png);
+    background-position: inherit;
+    background-size: contain;
+    background-repeat: round;
 }
 
 .home__head_btn {
@@ -13,9 +13,21 @@
     margin-bottom: 60px;
 }
 
+@media screen and (max-width: 950px) {
+    .home__head {
+        background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722032/PC/Hero_Image_2_ei2r2r.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .home__head {
         background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603717661/Hero_Image_Overlay_qs6q1h.png');
         height: 550px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
