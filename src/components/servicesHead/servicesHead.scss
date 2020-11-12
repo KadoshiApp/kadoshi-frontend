@@ -16,3 +16,16 @@
     color: #ffffff;
 }
 
+@media screen and (max-width: 659px)  {
+    .service_head_main {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .service_head_body {
+        font-size: 10px;
+    }
+    .service_head_sub {
+        font-size: 40px;
+        font-weight: 900;
+    }
+}

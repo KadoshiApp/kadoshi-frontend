@@ -1,12 +1,19 @@
 .service_body_container {
     background-color:  #f4e1db;
-    margin-top: 16vh;
+    margin-top: 4vh;
     height: 75vh;
 }
 .service_body_p {
     text-align: center;
-    margin: 10vh;    
     font-size: 40px;
     font-weight: 400;
-    padding-top: 40px;
+}
+@media screen and (max-width: 659px)  {
+    .service_body_p {
+        font-size: 15px;
+    }
+    .service_body_container {
+        margin-top: 1vh;
+    }
+    
 }

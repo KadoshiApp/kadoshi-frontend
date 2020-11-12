@@ -32,7 +32,7 @@ const ServiceComment = () => {
       ))}
 
       <Stack>
-        <InputGroup size="lg">
+        <InputGroup size="sm">
         <Input placeholder="Add your own comment" />
         <InputRightAddon children="COMMENT" background="#fb7346"/>
         </InputGroup>

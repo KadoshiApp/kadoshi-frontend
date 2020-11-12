@@ -9,7 +9,8 @@ import "./aboutPage.scss";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="about_body_container">
+      <div className="about_contain">
       <div className="about_head">
         <TopNav />
         <AboutCaption />
@@ -17,6 +18,7 @@ const AboutPage = () => {
       <AboutBody />
       <FooterWide />
       <FooterThin />
+      </div>
     </div>
   );
 };

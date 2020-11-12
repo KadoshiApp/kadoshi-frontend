@@ -28,3 +28,12 @@
     text-align: center;
     margin-top: 5vh;
 }
+
+@media screen and (max-width: 650px)  {
+    .comment_topic {
+        font-size: 25px;
+    }
+    .service_comment_container {
+        height: auto;
+    }
+}
