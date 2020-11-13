@@ -11,7 +11,7 @@ import ServiceComment from "../../components/serviceComment/serviceComment";
 const ServicesPage = () => {
   return (
     <div className="services_body">
-      <div>
+      <div className="services_body_cont"> 
         <TopNav />
         <ServicesHead />
       </div>

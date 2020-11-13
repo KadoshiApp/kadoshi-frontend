@@ -5,6 +5,9 @@
     background-position: center;
     background-size: cover;
 }
+.about_contain {
+    height: fit-content;
+}
 
 
 @media screen and (max-width: 650px) {
@@ -13,5 +16,8 @@
         width: 100%;
         background-position: center;
         background-size: cover;
+    }
+    .about_contain {
+        height: fit-content;
     }
 }

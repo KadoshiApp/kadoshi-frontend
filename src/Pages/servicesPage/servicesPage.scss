@@ -1,10 +1,14 @@
 .services_body {
-    background-image: url("https://res.cloudinary.com/kadoshi/image/upload/v1603722685/PC/Services_bgqfuz.png");
-    height: 400px;
     width: 100%;
+    height: 100%;
+    background-color: #f4e1db;
+}
+.services_body_cont {
+    background-image: url("https://res.cloudinary.com/kadoshi/image/upload/v1603722685/PC/Services_bgqfuz.png");
+    width: 100%;
+    height: 400px;
     background-position: center;
     background-size: cover;
-    background-color: #f4e1db;
 }
 .service_about {
     display: flex;
@@ -36,4 +40,16 @@
     font-weight: 600;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    }
+    @media screen and (max-width: 650px)  {
+        .services_body_cont {
+            background-image:url("https://res.cloudinary.com/kadoshi/image/upload/v1603722685/PC/Services_bgqfuz.png");
+        }
+
+        .service_basic_info_container {
+        font-size: 15px;
+        }
+        .carousel_top {
+            font-size: 20px;
+        }
     }
