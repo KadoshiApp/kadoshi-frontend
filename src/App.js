@@ -33,12 +33,12 @@ function App() {
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/signIn" component={SignIn} />
 					<Route exact path="/about" component={AboutPage} />
-					<Route exact path="/accountType" component={AccountType} />
-					<Route exact path="/professional" component={SignUpProfessional} />
-					<Route exact path="/customers" component={SignUpCustomers} />
+					<Route exact path="/account" component={AccountType} />
+					<Route exact path="/signUp" component={SignUpProfessional} />
+					<Route exact path="/client" component={SignUpCustomers} />
 					<Route exact path="/contact" component={ContactPage} />
 					<Route exact path="/services" component={ProfessionalPage} />
-          <Route exact path="/serviceProfile" component={ServicesPage} />
+          			<Route exact path="/serviceProfile" component={ServicesPage} />
 					<Route exact path="/profile" component={UpdateProfile} />
 				</Switch>
 			</Suspense>

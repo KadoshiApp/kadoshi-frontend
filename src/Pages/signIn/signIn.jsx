@@ -1,5 +1,10 @@
-import React from 'react';
-import { Icon, Input, InputGroup, Avatar, InputRightElement, Stack } from "@chakra-ui/core";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { errorMessage } from "../../redux/message/message.action";
+import { loginClient } from '../../redux/login/login.actions'
+
+import { Icon, Input, InputGroup, InputRightElement, Stack, Select } from "@chakra-ui/core";
 
 import TopNav from '../../components/topNav/topNav';
 import { FooterThin } from "../../components/footer/footer";
@@ -9,6 +14,29 @@ import './signIn.scss';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 
 const SignIn = () => {
+    const dispatch = useDispatch()
+    const initialState = {
+        email: '',
+        password: '',
+        type: ''
+    }
+    const [ inputData, setInputData ] = useState(initialState)
+    const { email, password, type } = inputData
+
+    const handleInputs = (e) => {
+        setInputData({ ...inputData, [e.target.name]: e.target.value });
+    }
+
+    const onSubmit = () => {
+        if (!email || !password || !type) {
+            return dispatch(errorMessage('Please fill out all the inputs!'))
+        }
+        if (email && password && type === 'Client(User)') {
+            return dispatch(loginClient({email, password}))
+        }
+    }
+
+
     return (
         <div style={{height: '100vh'}}>
             <div className='signIn__main'>
@@ -24,26 +52,44 @@ const SignIn = () => {
                             <Stack spacing={8}>
                                 <InputGroup>
                                     <Input 
-                                        type='text' 
+                                        type='email' 
                                         placeholder='Email Address'
+                                        value={email}
+                                        onChange={handleInputs}
+                                        name='email'
                                         />
-                                    <InputRightElement children={<Avatar size='2xs' />} />
+                                    <InputRightElement children={<Icon name="email" color="#fff" size="20px" />} />
                                 </InputGroup>
 
                                 <InputGroup>
                                     <Input 
                                         placeholder='Password'
-                                        type='password'  />
+                                        type='password'
+                                        value={password}
+                                        onChange={handleInputs}
+                                        name='password'  />
                                     <InputRightElement children={<Icon name='lock' color='#fff' />} />
                                 </InputGroup>
+
+                                <Select
+                                    placeholder='Login as'
+                                    variant="outline"
+                                    value={type}
+                                    name='type'
+                                    onChange={handleInputs}
+                                >
+                                    <option value="Client(User)"> Client(User) </option>
+                                    <option value="Professional(Service Provider)"> Professional(Service Provider) </option>
+                                </Select>
                             </Stack>
                         </div>
                         <div className='signIn__main_button'>
                             <ButtonSmall 
                                 caption='login' 
-                                roundEdge />
+                                roundEdge
+                                clicked={onSubmit} />
                             <div>
-                                Dont Have An Account? SIGN UP
+                                Dont Have An Account? <Link to='/account'>SIGN UP</Link>
                             </div>
                         </div>
                     </div>

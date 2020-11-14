@@ -1,11 +1,9 @@
 import * as actionTypes from './signUp.types';
 
 const INITIAL_STATE = {
-	loggedIn: false,
     full_name: '',
     joined: '',
 	email: '',
-	loading: false,
 	errorMessage: null,
 	slug: '',
 };
@@ -16,7 +14,6 @@ const signUpCustomerReducer = (state = INITIAL_STATE, action) => {
             const { full_name, email, slug, joined } = action.payload
             return {
                 ...state,
-                loggedIn: true,
                 full_name,
                 errorMessage: null,
                 slug,

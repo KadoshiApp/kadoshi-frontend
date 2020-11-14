@@ -1,12 +1,13 @@
 import React, { Fragment, useState, memo } from "react";
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import { signUpCustomer } from '../../redux/signUpCustomer/signUp.actions'
 import { errorMessage } from '../../redux/message/message.action'
 
 
-import { Icon, Input, InputGroup, InputLeftElement, Stack } from "@chakra-ui/core";
-import { MdAccountBox } from "react-icons/md";
+import { Icon, Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/core';
+import { MdAccountBox } from 'react-icons/md';
 
 import TopNav from "../../components/topNav/topNav";
 import { FooterThin } from "../../components/footer/footer";
@@ -16,8 +17,7 @@ import './signUpCustomers.scss';
 
 const SignUpCustomers = memo(({
     signUp,
-    error,
-    loggedIn
+    error
 }) => {
     const initialState = {
         name: '',
@@ -54,7 +54,7 @@ const SignUpCustomers = memo(({
                     <TopNav /> 
                     <div className='professional__main_caption'>
                         <div> Kadoshi Customers </div>
-                        <div> Already have an Account? SIGN IN </div>
+                        <div className='___link'> Already have an Account?<Link to='/signIn'> SIGN IN</Link> </div>
                     </div>
                     <div className='professional__main_inputs'>
                         <div> 
@@ -134,8 +134,5 @@ const mapDispatchToProps = (dispatch) => ({
     signUp: (payload) => dispatch(signUpCustomer(payload)),
     error: (message) => dispatch(errorMessage(message))
 });
-const mapStateToProps = ({ signUpCustomer }) => ({
-	loggedIn: signUpCustomer.loggedIn
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(memo(SignUpCustomers))
+export default connect(null, mapDispatchToProps)(memo(SignUpCustomers))
