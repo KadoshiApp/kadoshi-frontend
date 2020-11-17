@@ -9,15 +9,19 @@
 }
 
 .option-_header {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: center;
     margin: 3% auto 0;
     
     select {
+        border-radius: 0;
         height: 46px;
         width: 100%;
         align-items: center;
+        font-size: 14px;
+        font-style: italic;
+        border-radius: 0 !important;
     }
     
     select,
@@ -54,9 +58,8 @@
 
 @media screen and (max-width: 650px) {
     .option-_header {
-        width: 40%;
-        display: inline;
-        margin: auto;
+        width: 75%;
+        flex-direction: column;
         
     }
     .text-list {
@@ -67,6 +70,7 @@
         select {
             height: 46px;
             margin-bottom: 12px;
+            font-size: 14px;
         }
         
         select,
@@ -75,7 +79,7 @@
             color: black;
             outline:none;
             border: 2px solid #f87e59;
-            border-radius: 8px;
+            border-radius: 0 !important;
             
             option {
                 background-color:  #F9E6E0;

@@ -36,13 +36,13 @@ const SignUpCustomers = memo(({
     
     const handleSubmit = (e) => {
         if (!name || !email || !phone || !password || !confirmEmail || !confirmPassword) {
-            return error('please complete all the Input Fields!')
+            return error('Complete all Fields!')
         } else if (password !== confirmPassword) {
             return error('passwords do not match!')
         } else if (email !== confirmEmail) {
             return error('emails do not match!')
         } else if (name.split(' ').length < 2) {
-            return error('please enter your full name.')
+            return error('Please Enter full name.')
         }
         signUp({ full_name: name, email, number: phone, password });
     }

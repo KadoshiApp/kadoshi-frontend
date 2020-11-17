@@ -49,12 +49,12 @@ let data = [
     }
 ];
 
-const ProfessionalBody = props => {
+const ProfessionalBody = ({values, change, clicked}) => {
 
     return (
         <div className='service-body-background'>
             <div className='professional_optioon'>
-                <ProfessionalOption />
+                <ProfessionalOption values={values} change={change} clicked={clicked} />
             </div>
             <div className='professional-view'>Available Professonals</div>
             <div className='professional-data'>
