@@ -7,7 +7,7 @@ function ProfessionalCaption() {
         <div className='service-caption-header'>
             <div className='service-capt'>
                 Kadoshi
-                <span>Service</span>
+                <span>Services</span>
                 <span className='service-hiven'>!</span>
             </div>
             <div className='service-text'>

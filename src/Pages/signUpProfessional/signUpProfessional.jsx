@@ -35,9 +35,9 @@ const SignUpProfessional = memo(({
 
     const handleSubmit = (e) => {
         if (!full_name || !email || !password || !address || !job_type || !experience ) {
-            return error('please complete all the Input Fields!')
+            return error('Complete all Fields!')
         } else if (full_name.split(' ').length < 2) {
-            return error('please enter your full name.')
+            return error('please enter full name.')
         }
         signUp(inputData)
     }

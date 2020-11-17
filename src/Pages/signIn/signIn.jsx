@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
-import { loginClient } from '../../redux/login/login.actions'
+import { loginClient, loginProf } from '../../redux/login/login.actions'
 
 import { Icon, Input, InputGroup, InputRightElement, Stack, Select } from "@chakra-ui/core";
 
@@ -33,6 +33,9 @@ const SignIn = () => {
         }
         if (email && password && type === 'Client(User)') {
             return dispatch(loginClient({email, password}))
+        }
+        if (email && password && type === 'Professional(Service Provider)') {
+            return dispatch(loginProf({email, password}))
         }
     }
 

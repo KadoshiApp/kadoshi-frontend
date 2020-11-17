@@ -1,5 +1,7 @@
 import * as actionTypes from './signUp.types';
 import Axios from '../../Axios.config';
+import Auth from "../../Auth.config";
+
 import { loading } from "./../loading/loading.action";
 import { errorMessage, successMessage } from '../message/message.action'
 
@@ -25,7 +27,7 @@ export const signUpCustomer = (data) => async (dispatch) => {
             ...data
         })
         dispatch(loading(false));
-        localStorage.setItem('x-access-token', signedUp.data.token);
+        Auth.saveToken(signedUp.data.token);
         dispatch(successMessage(signedUp.data.message))
         dispatch(signUpSuccess(signedUp.data.data));
     } catch (err) {
@@ -35,7 +37,6 @@ export const signUpCustomer = (data) => async (dispatch) => {
             dispatch(errorMessage(err.response.data.message))
             return
         } else if (err.message) {
-            console.log(err.message)
             dispatch(signUpFail(err.message));
             dispatch(errorMessage(err.message));
         }
