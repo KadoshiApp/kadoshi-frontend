@@ -7,6 +7,7 @@ import loadingReducer from './loading/loading.reducer';
 import messageReducer from './message/message.reducer';
 import signUpProfReducer from './signUpProffesional/signUpProf.reducers';
 import loginReducer from './login/login.reducer';
+import professionalReducer from './Professionals/professionals.reducer';
 
 const persistConfig = {
 	key: 'root',
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     loadingReducer,
     messageReducer,
     signUpProfReducer,
-    loginReducer
+    loginReducer,
+    professionalReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);

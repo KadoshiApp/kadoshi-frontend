@@ -46,9 +46,10 @@ const ServicesPage = () => {
         <ServiceCarousel />
         <ServiceComment />
       </div>
-
-      <FooterWide />
-      <FooterThin />
+      <div className='carousel__footer'>
+        <FooterWide />
+        <FooterThin />
+      </div>
     </div>
   );
 };

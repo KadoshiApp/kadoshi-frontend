@@ -26,6 +26,7 @@
     background-color: #f4e1db;
     font-size: x-large;
     font-weight: 500;
+    margin-bottom: 30px;
 }
 .service_basic_info_about {
     width: 100%;
@@ -41,6 +42,12 @@
     margin-top: 5vh;
     margin-bottom: 5vh;
     }
+
+// .carousel__footer {
+//     height: 120px;
+// }
+
+
     @media screen and (max-width: 650px)  {
         .services_body_cont {
             background-image:url("https://res.cloudinary.com/kadoshi/image/upload/v1603722685/PC/Services_bgqfuz.png");
