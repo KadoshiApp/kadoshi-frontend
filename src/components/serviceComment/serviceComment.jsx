@@ -1,6 +1,6 @@
 import React from "react";
 import ServiceProp from "../serviceProp/serviceProp";
-import { Input, InputGroup, InputRightAddon, Stack } from "@chakra-ui/core";
+import { Input, InputGroup, Stack } from "@chakra-ui/core";
 import ButtonBig from '../buttonBig/buttonBig';
 const comments = [
 	{

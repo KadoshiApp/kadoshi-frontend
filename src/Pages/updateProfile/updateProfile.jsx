@@ -1,5 +1,6 @@
 import React from "react";
 import { MdLinkedCamera } from "react-icons/md";
+import Upload from '../../components/uploadModal/uploadModal'
 
 import { FooterThin, FooterWide } from "../../components/footer/footer";
 import TopNav from "../../components/topNav/topNav";
@@ -10,6 +11,9 @@ import UpdateProfileInputs from '../../components/updateProfileInputs/updateProf
 import './updateProfile.scss';
 
 const UpdateProfile = () => {
+    const uploadCaption = '+ add completed Work';
+    const uploadIcon = <MdLinkedCamera color="#fff" size="30px" />;
+
 	return (
 		<div className="update__profile">
 			<div className='update__profile_caption'>
@@ -24,14 +28,14 @@ const UpdateProfile = () => {
                 <div className='update__profile_body'>
                     <div className='update__profile_img'>
                         <div className='update__profile_overlay'>
-                            <MdLinkedCamera color='#fff' />
+                            <Upload figure={uploadIcon} />
                         </div>
                         <img src='https://thumbs.dreamstime.com/z/portrait-professional-construction-worker-hammer-tool-belt-white-background-150331239.jpg' alt='' />
                     </div>
                     <div className='update__img_caption'> Upload Profile Photo </div>
 				    <UpdateProfileInputs />
                     <div className='update__upload_work'>
-                        + add completed Work
+                        <Upload figure={uploadCaption} />
                     </div>
                     <div className='update__profile_btn'>
                         <ButtonSmall caption='update' plain />
