@@ -20,6 +20,19 @@
         height: 50px;
     }
 
+    textarea {
+        border: 2px solid #f87e59;
+        font-family: Roboto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        height: 100px;
+        width: 96% !important;
+    }
+
+    textarea:focus {
+        background-color:rgba(163, 163, 163, 0.2);
+    }
+
     input::placeholder {
         color: #000;
     }
@@ -53,9 +66,24 @@
     }
 }
 
+
+@media screen and (max-width: 830px) {
+    .update__profile_inputs {
+        textarea {
+            width: 93% !important;
+        }
+    }
+}
+
+
 @media screen and (max-width: 650px) {
     .update__profile_inputs {
         width: 85%;
+
+        textarea {
+            width: 92% !important;
+            border-radius: 0;
+        }
 
         .css-1lepn2w {
             top: 50% !important;
@@ -84,6 +112,14 @@
             margin-bottom: 0;
             height: 40px;
             font-size: 0.84rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .update__profile_inputs {
+        textarea {
+            width: 88% !important;
         }
     }
 }

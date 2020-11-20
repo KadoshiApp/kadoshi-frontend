@@ -1,7 +1,9 @@
 import React from 'react'
+import Auth from '../../Auth.config';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { viewProfessional } from '../../redux/Professionals/professionals.actions'
+import { toggleAuthModal } from '../../redux/loading/loading.action'
 // import ProfessionalRating from '../professionalRating/ProfessionalRating';
 import ReactStars from "react-rating-stars-component";
 
@@ -16,9 +18,11 @@ function ProfessionalProfile({data}) {
     };
 
     const view = (user) => {
-        if (user) {
+        if (user && Auth.getToken()) {
             history.push('/professional')
             dispatch(viewProfessional(user))
+        } else {
+            dispatch(toggleAuthModal())
         }
     }
 
@@ -38,6 +42,7 @@ function ProfessionalProfile({data}) {
                         size={20}
                         activeColor="#fa8964"
                         classNames="react_star"
+                        edit={false}
                     />
                 </div>
                     <button className='body-button' onClick={() => view(data.userSlug)}>VIEW</button>
