@@ -1,3 +1,4 @@
 export const loadingActionTypes = {
-  LOADING: 'LOADING',
+	LOADING: "LOADING",
+	TOGGLE_AUTH_MODAL: 'TOGGLE_AUTH_MODAL'
 };

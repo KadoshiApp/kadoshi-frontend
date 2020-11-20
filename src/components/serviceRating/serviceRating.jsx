@@ -19,19 +19,23 @@ const ProffesionalRating = () => {
         <ReactStars
           count={5}
           onChange={ratingChanged}
+          value={4.5}
           size={34}
-          activeColor="#fa8964"
+          edit={false}
+          color='grey'
+          activeColor='#fa8964'
+          half={true}
           classNames="react_star"
         />
         <div className="generated_number">Rating: 4.1</div>
         <div className="btn_shift_center">
         <span className="star_bottom_left">
-                  <ButtonSmall caption="VEIW PHONE"
-                      plain />
+          <ButtonSmall caption="VEIW PHONE"
+              plain />
         </span>
         <span className="star_bottom_right">
-                  <ButtonSmall caption="VEIW ADDRESS"
-                      plain />
+          <ButtonSmall caption="VEIW ADDRESS"
+              plain />
         </span>
         </div>
       </div>

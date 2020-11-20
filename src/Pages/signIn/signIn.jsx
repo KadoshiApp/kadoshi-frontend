@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import Auth from '../../Auth.config'
 import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
 import { loginClient, loginProf } from '../../redux/login/login.actions'
@@ -14,7 +15,8 @@ import './signIn.scss';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 
 const SignIn = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() 
+    const history = useHistory()
     const initialState = {
         email: '',
         password: '',
@@ -23,13 +25,14 @@ const SignIn = () => {
     const [ inputData, setInputData ] = useState(initialState)
     const { email, password, type } = inputData
 
+
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });
     }
 
     const onSubmit = () => {
         if (!email || !password || !type) {
-            return dispatch(errorMessage('Please fill out all the inputs!'))
+            return dispatch(errorMessage('Fill all fields'))
         }
         if (email && password && type === 'Client(User)') {
             return dispatch(loginClient({email, password}))

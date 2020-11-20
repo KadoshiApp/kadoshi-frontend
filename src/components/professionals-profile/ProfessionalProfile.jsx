@@ -1,4 +1,9 @@
 import React from 'react'
+import Auth from '../../Auth.config';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { viewProfessional } from '../../redux/Professionals/professionals.actions'
+import { toggleAuthModal } from '../../redux/loading/loading.action'
 // import ProfessionalRating from '../professionalRating/ProfessionalRating';
 import ReactStars from "react-rating-stars-component";
 
@@ -6,19 +11,30 @@ import './professionalProfile.scss';
 
 
 function ProfessionalProfile({data}) {
+    const history = useHistory()
+    const dispatch = useDispatch()
     const ratingChanged = (newRating) => {
-        console.log(newRating);
+        return
     };
+
+    const view = (user) => {
+        if (user && Auth.getToken()) {
+            history.push('/professional')
+            dispatch(viewProfessional(user))
+        } else {
+            dispatch(toggleAuthModal())
+        }
+    }
 
     return (
         <div className='service-profile-info'>
             <div className='profile-pic'>
-                <img src={data.image} className='profile-pic' alt="img"/>
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZ5bqdh9pF7hNdKVrYTboYSRiIfTFMidQXQw&usqp=CAU' className='profile-pic' alt="img"/>
             </div>
             <div className='profile-info'>
                 <div className='profile-name'>
-                {data.name}
-                <br /><span>{data.job}</span> </div>
+                {data.fullName}
+                <br /><span> Plumber </span> </div>
                 <div className='profile-rating'>
                     <ReactStars
                         count={5}
@@ -26,9 +42,10 @@ function ProfessionalProfile({data}) {
                         size={20}
                         activeColor="#fa8964"
                         classNames="react_star"
+                        edit={false}
                     />
                 </div>
-                    <button className='body-button'>VIEW</button>
+                    <button className='body-button' onClick={() => view(data.userSlug)}>VIEW</button>
                 </div>
             </div>
     )

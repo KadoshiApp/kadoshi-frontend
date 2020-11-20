@@ -4,7 +4,7 @@ const INITIAL_STATE = {
     email: '',
     full_name: '',
     joined: '',
-    slug: ''
+    slug: '',
 };
 
 const loginReducer = (state = INITIAL_STATE, action) => {

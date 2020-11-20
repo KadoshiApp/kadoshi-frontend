@@ -1,0 +1,46 @@
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    top: 120%;
+    right: 15%;
+    left: 15%;
+    z-index: 8;
+    background-color: rgb(244,225,219) !important;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 34px 0;
+    border: 1px solid #ffffff;
+    width: 50%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.2s;
+  animation-name: animatetop;
+  animation-timing-function: linear;
+  transition: transform 300ms linear;
+  transition: 0.18s ease-in-out all;
+  animation-duration: 0.2s;
+}
+
+@media (max-width: 650px) {
+  .modal-content {
+    width: 80%;
+    right: 10%;
+    left: 10%;
+    margin: 0 auto !important;
+  }
+}
+
+.none {
+  display: none;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
