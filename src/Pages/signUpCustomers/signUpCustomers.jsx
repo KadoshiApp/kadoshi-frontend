@@ -1,6 +1,7 @@
-import React, { Fragment, useState, memo } from "react";
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import React, { Fragment, useState, memo, useEffect } from "react";
+import { connect, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom'
+// import Auth from '../../Auth.config'
 
 import { signUpCustomer } from '../../redux/signUpCustomer/signUp.actions'
 import { errorMessage } from '../../redux/message/message.action'
@@ -27,8 +28,18 @@ const SignUpCustomers = memo(({
         password: '',
         confirmPassword: ''
     }
+    // const history = useHistory()
+    // const fetchedEmail = useHistory((state) => state.signUpCustomer.email)
     const [ inputData, setInputData ] = useState(initialState)
     const { name, email, confirmEmail, phone, password, confirmPassword } = inputData
+
+    // useEffect(() => {
+    //     if (fetchedEmail !== null) {
+    //         window.setTimeout(() => {
+    //             history.push('/') 
+    //         }, 1500);
+    //     }
+    // }, [fetchedEmail])
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value })
