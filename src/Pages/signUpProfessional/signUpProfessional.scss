@@ -1,6 +1,7 @@
 .professional__main {
     height: 97vh;
     background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603723051/PC/Register_Professional_tki3wo.png);
+    background-color: #444;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -104,7 +105,7 @@
     }
 
     .professional__main_inputs {
-        width: 70%;
+        width: 80%;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 1.9rem;
@@ -123,6 +124,7 @@
         input {
             outline:none;
             border-radius: 0;
+            border: 2px solid #555;
         }
 
         select::placeholder, 
