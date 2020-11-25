@@ -20,6 +20,7 @@ import IndeterminateProgressbar, {
   ProgressBar,
   ProgressSwitch,
 } from './components/progressBar/IndeterminateProgressbar';
+import ForgotPassword from './components/forgotPassword/forgotPassword';
 
 
 function App() {
@@ -30,9 +31,10 @@ function App() {
 			<Suspense fallback={<ProgressBar loading />}>
 				<IndeterminateProgressBarState />
 				<ProgressSwitch />
-				<Switch>
+			  <Switch>
 					<Route exact path="/" component={HomePage} />
-					<Route exact path="/signIn" component={SignIn} />
+				  <Route exact path="/signIn" component={SignIn} />
+				  <Route exact path="/password" component={ForgotPassword} />
 					<Route exact path="/about" component={AboutPage} />
 					<Route exact path="/account" component={AccountType} />
 					<Route exact path="/signUp" component={SignUpProfessional} />
