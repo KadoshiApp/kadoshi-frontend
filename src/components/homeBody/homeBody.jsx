@@ -13,7 +13,7 @@ const HomeBody = () => {
                         </span> 
                     </div>
                     <div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quam. Lorem ipsum dolor sit amet.
+                        Register as a Professional or a client.
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@ const HomeBody = () => {
                         </span> 
                     </div>
                     <div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quam. Lorem ipsum dolor sit amet.
+                        Click to meet a vendor and check available services.
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const HomeBody = () => {
                         </span> 
                     </div>
                     <div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quam. Lorem ipsum dolor sit amet.
+                         Chose your prefered professionals based on profile rating recomendation and pictures of previous works.
                     </div>
                 </div>
             </div>

@@ -9,15 +9,12 @@ const AboutBody = () => {
     <div className="about_body_container">
       <div className="about_body">
         <p>
-          "kADOSHI.com" is the brainchild of our imaginationthe we cherish
-          greatly. it is something to generate a platform where
-          employers/clients and proffessionals can interact. It is another thing
-          to create interaction in an enviromentthat potrays security, ease and
-          transparency. We work to bring a platform that creates adequate
-          visibility and trust for professionals of choice and strategically,
-          effortlessly and transparently. Our mission is to connect
-          proffessionals to clients without restriction. Simply register and
-          enjoy.
+          "kADOSHIServices.com" was born out of the need for satisfaction without stress. 
+          It is a platform for interaction between vendors/service providers and prospective clients/customers. 
+          We aim to provide stress free services through professional artisians to our valued clients,
+          from the comfort of their homes.
+          Simply register and enjoy 24/7 service delivery from your mobile devices
+          to your doorsteps .
         </p>
         <div className="home__head_btn">
           <ButtonBig caption="get started today!" />

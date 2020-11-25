@@ -10,9 +10,10 @@ const ContactOffice = props => {
             <div className='title'>{props.title}</div>
         </div>
         <div className='lorem'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore impedit ullam dicta  
-            quia amet dolore porro fugit magnam minima facilis illo aliquamtotam id ab,  
-            reprehenderit eum accusamus, expedita consectetur!
+            No 27 Etang Obuli crescent ,Utako Abuja.
+            Nigeria
+            Phone 08103642970
+            kadoshiservices1@gmail.com
         </div>
         </div>
     )
