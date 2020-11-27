@@ -9,13 +9,12 @@ import {
   InputGroup,
   InputRightElement,
   Stack,
-  Select,
 } from "@chakra-ui/core";
 import { FooterThin } from "../../components/footer/footer";
 
-import "./forgotPassword.scss";
+import "./passwordConfirmation.scss";
 
-const ForgotPassword = () => {
+const PasswordConfirmation = () => {
   const dispatch = useDispatch();
   const initialState = {
     email: "",
@@ -23,20 +22,20 @@ const ForgotPassword = () => {
   };
 
   const [inputData, setInputData] = useState(initialState);
-  const { email, type } = inputData;
+  const { email, password } = inputData;
 
   const handleInputs = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = () => {
-    if (!email || !type) {
+    if (!email) {
       return dispatch(errorMessage("Fill all fields"));
     }
-    if (email && type === "Client(User)") {
+    if (email === "Client(User)") {
       return dispatch(loginClient({ email }));
     }
-    if (email && type === "Professional(Service Provider)") {
+    if (email === "Professional(Service Provider)") {
       return dispatch(loginProf({ email }));
     }
   };
@@ -49,30 +48,30 @@ const ForgotPassword = () => {
               Kadoshi
             </NavLink>
           </div>
+          <div>New Password</div>
 
           <InputGroup>
             <Input
-              type="email"
-              placeholder="Email Address"
-              value={email}
+              placeholder="Password"
+              type="password"
+              value={password}
               onChange={handleInputs}
-              name="email"
+              name="password"
             />
-            <InputRightElement children={<Icon name="email" size="20px" />} />
-          </InputGroup>
+            <InputRightElement children={<Icon name="lock" color="#fff" />} />
+                  </InputGroup>
+                  <div>Confirm New Password</div>
 
-          <Select
-            variant="outline"
-            value={type}
-            name="type"
-            onChange={handleInputs}
-          >
-            <option value="Client(User)"> Client(User) </option>
-            <option value="Professional(Service Provider)">
-              {" "}
-              Professional(Service Provider){" "}
-            </option>
-          </Select>
+          <InputGroup>
+            <Input
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={handleInputs}
+              name="password"
+            />
+            <InputRightElement children={<Icon name="lock" color="#fff" />} />
+          </InputGroup>
         </Stack>
 
         <div className="forgot_password_main_button">
@@ -87,4 +86,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default PasswordConfirmation;
