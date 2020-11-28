@@ -3,12 +3,58 @@ import "./servicesPage.scss";
 import TopNav from "../../components/topNav/topNav";
 import { FooterThin, FooterWide } from "../../components/footer/footer";
 
+import { AiOutlineWarning } from 'react-icons/ai'
+import ViewModal from "../../components/viewModal/viewModal";
+import ReactStars from "react-rating-stars-component";
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleAuthModal } from '../../redux/loading/loading.action'
+// import ServiceProp from '../../serviceProp/serviceProp'
 import ServicesHead from "../../components/servicesHead/servicesHead";
 import ServiceBody from "../../components/serviceBody/serviceBody";
 import ServiceCarousel from "../../components/serviceCarousel/serviceCarousel";
 import ServiceComment from "../../components/serviceComment/serviceComment";
 
 const ServicesPage = () => {
+
+  const dispatch = useDispatch()
+  const modal = useSelector((state) => state.loadingReducer.modal)
+  const ratingChanged = (newRating) => {
+    return
+};
+
+    const closeModal = () => {
+      dispatch(toggleAuthModal())
+    }
+  
+
+  let authModal = <div> </div>;
+  if (modal) {
+      authModal = (
+          <ViewModal modal={modal} showModal={modal}>
+              <div className='service__authmodal'>
+                  <div> <AiOutlineWarning /> </div>
+                  <div> You Must Sign In To View Professionals </div>
+                  <div> 
+                      <p> Our account creation process is very simple. </p>
+                      <p> Access it via the links below </p> 
+                  </div>
+                  <div> 
+                  <ReactStars
+                      count={5}
+                      onChange={ratingChanged}
+                      size={20}
+                      activeColor="#fa8964"
+                      classNames="react_star"
+                      edit={false}
+                  />
+                  </div>
+              </div>
+          </ViewModal>
+      );
+  }
+
+  console.log(modal, 'modal')
+
   return (
     <div className="services_body">
       <div className="services_body_cont"> 
@@ -44,6 +90,7 @@ const ServicesPage = () => {
         <div className="carousel_top">PREVIOUS WORK</div>
 
         <ServiceCarousel />
+        {authModal}
         <ServiceComment />
       </div>
       <div className='carousel__footer'>
