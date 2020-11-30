@@ -28,8 +28,8 @@ function ProfessionalOption({ values, change, clicked }) {
 					<option value="Other"> Transport </option>
 				</Select>
 				<Select placeholder="Select Location" variant="outline" value={values.location} onChange={change} name='location'>
-					<option value="Abuja"> Abuja </option>
 					<option value="Abia"> Abia </option>
+					<option value="Abuja"> Abuja </option>
 					<option value="Adamawa"> Adamawa </option>
 					<option value="Akwa Ibom"> Akwa Ibom </option>
 					<option value="Anambra"> Anambra </option>
