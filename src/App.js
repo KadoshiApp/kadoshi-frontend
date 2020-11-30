@@ -12,6 +12,8 @@ import ProfessionalPage from './Pages/professionalPage/ProfessionalPage';
 import UpdateProfile from './Pages/updateProfile/updateProfile';
 import ServicesPage from './Pages/servicesPage/servicesPage';
 import UploadModal from './components/uploadModal/uploadModal';
+import ForgotPassword from './components/forgotPassword/forgotPassword';
+import PasswordConfirmation from './components/passwordConfirmation/passwordConfirmation';
 
 import './App.css';
 import Message from './components/message/message'
@@ -34,7 +36,9 @@ function App() {
 					<Route exact path="/" component={HomePage} />
 				  <Route exact path="/signIn" component={SignIn} />
 					<Route exact path="/about" component={AboutPage} />
-					<Route exact path="/account" component={AccountType} />
+				  <Route exact path="/account" component={AccountType} />
+				  <Route exact path="/forgot" component={ForgotPassword} />
+				  <Route exact path="/confirmation" component={PasswordConfirmation} />
 					<Route exact path="/signUp" component={SignUpProfessional} />
 					<Route exact path="/client" component={SignUpCustomers} />
 					<Route exact path="/contact" component={ContactPage} />
