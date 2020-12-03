@@ -45,10 +45,7 @@ const ServiceComment = () => {
         />
       ))}
         <div className="service_button">
-        <ButtonBig caption='Add comments' clicked={addComment}/>
-          </div>
-          <div className="service___button">
-        <ButtonBig caption='Back' />
+        <ButtonBig caption='Add comments' clicked={addComment} />
           </div>
     </div>
   );
