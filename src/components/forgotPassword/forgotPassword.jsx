@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
 import { NavLink } from "react-router-dom";
+// import Auth from '../../Auth.config';
 import { loginClient, loginProf } from "../../redux/login/login.actions";
 import {
   Icon,

@@ -8,11 +8,13 @@ import ViewModal from "../../components/viewModal/viewModal";
 import ReactStars from "react-rating-stars-component";
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleAuthModal } from '../../redux/loading/loading.action'
+import ButtonBig from '../../components/buttonBig/buttonBig';
 // import ServiceProp from '../../serviceProp/serviceProp'
 import ServicesHead from "../../components/servicesHead/servicesHead";
 import ServiceBody from "../../components/serviceBody/serviceBody";
 import ServiceCarousel from "../../components/serviceCarousel/serviceCarousel";
 import ServiceComment from "../../components/serviceComment/serviceComment";
+import { Textarea } from "@chakra-ui/core";
 
 const ServicesPage = () => {
 
@@ -30,14 +32,10 @@ const ServicesPage = () => {
   let authModal = <div> </div>;
   if (modal) {
       authModal = (
-          <ViewModal modal={modal} showModal={modal}>
-              <div className='service__authmodal'>
+          <ViewModal modal={modal} showModal={closeModal}>
+              <div className='professional__authmodal'>
                   <div> <AiOutlineWarning /> </div>
-                  <div> You Must Sign In To View Professionals </div>
-                  <div> 
-                      <p> Our account creation process is very simple. </p>
-                      <p> Access it via the links below </p> 
-                  </div>
+                  <div> Rate Proffesional</div>
                   <div> 
                   <ReactStars
                       count={5}
@@ -47,7 +45,10 @@ const ServicesPage = () => {
                       classNames="react_star"
                       edit={false}
                   />
-                  </div>
+            </div>
+
+            <Textarea className="com" isInvalid placeholder="Add Comment" />
+            <ButtonBig caption='Add comments' />
               </div>
           </ViewModal>
       );
