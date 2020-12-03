@@ -34,7 +34,9 @@
     text-align: justify;
     padding-left: 50px;
 }
-
+.com {
+    margin-bottom: 20px;
+}
 .carousel_top {
     text-align: center;
     font-size: xx-large;
@@ -42,11 +44,6 @@
     margin-top: 5vh;
     margin-bottom: 5vh;
     }
-
-// .carousel__footer {
-//     height: 120px;
-// }
-
 
     @media screen and (max-width: 650px)  {
         .services_body_cont {

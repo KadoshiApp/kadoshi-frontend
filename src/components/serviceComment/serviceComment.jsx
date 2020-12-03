@@ -1,10 +1,6 @@
 import React from "react";
-// import Popup from 'reactjs-popup';
-
-import Auth from '../../Auth.config';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { viewProfessional } from '../../redux/Professionals/professionals.actions'
 import { toggleAuthModal } from '../../redux/loading/loading.action'
 import ServiceProp from '../serviceProp/serviceProp'
 // import { Input, InputGroup, Stack } from "@chakra-ui/core";
@@ -27,18 +23,12 @@ const comments = [
 	},
 ];
 
-const ServiceComment = ({data}) => {
-  const history = useHistory()
+const ServiceComment = () => {
+  // const history = useHistory()
   const dispatch = useDispatch()
-  
 
-  const show = (user) => {
-      if (user && Auth.getToken()) {
-          history.push('/services')
-          dispatch(viewProfessional(user))
-      } else {
-          dispatch(toggleAuthModal())
-      }
+  const addComment = () => {
+    dispatch(toggleAuthModal());
   }
 
   return (
@@ -55,16 +45,7 @@ const ServiceComment = ({data}) => {
         />
       ))}
         <div className="service_button">
-          <ButtonBig caption='Add comments' />
-          </div>
-      {/* <Stack>
-        <InputGroup size="sm">
-          <Input placeholder="Add your own comment" />
-          {/* <InputRightAddon children="COMMENT" background="#fb7346"/> */}
-        {/* </InputGroup>
-          </Stack> */}
-          <div className="service___button"  onClick={() => show(data.userSlug)}>
-          <ButtonBig caption='Back' />
+        <ButtonBig caption='Add comments' clicked={addComment} />
           </div>
     </div>
   );
