@@ -1,7 +1,6 @@
 import React, { Fragment, useState, memo, useEffect } from "react";
 import { connect, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom'
-import Auth from '../../Auth.config'
 
 import { signUpCustomer } from '../../redux/signUpCustomer/signUp.actions'
 import { errorMessage } from '../../redux/message/message.action'
@@ -28,18 +27,18 @@ const SignUpCustomers = memo(({
         password: '',
         confirmPassword: ''
     }
-    const history = useHistory()
-    const fetchedEmail = useSelector((state) => state.signUpCustomer.email)
+    const { push } = useHistory()
+    const isAuth = useSelector((state) => state.loginReducer.isAuth);
     const [ inputData, setInputData ] = useState(initialState)
     const { name, email, confirmEmail, phone, password, confirmPassword } = inputData
     
     useEffect(() => {
-        if (Auth.getToken()?.length > 2) {
+        if (isAuth) {
             window.setTimeout(() => {
-                history.push('/') 
+                push('/services') 
             }, 1500);
         }
-    }, [ history])
+    }, [push, isAuth])
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value })
@@ -54,6 +53,10 @@ const SignUpCustomers = memo(({
             return error('emails do not match!')
         } else if (name.split(' ').length < 2) {
             return error('Please Enter full name.')
+        } else if (password.length < 8) {
+            return error('Password too short.')
+        } else if (phone.length !== 11) {
+            return error ('input valid number')
         }
         signUp({ full_name: name, email, number: phone, password });
     }

@@ -32,10 +32,9 @@ export const fetchProfessionals = () => async dispatch => {
     dispatch(loading(true))
     try {
         const professionals = await Axios.init().get(`professional`)
-        console.log(professionals.data, 'Professionals')
         dispatch(successMessage('available professionals fetched'))
         dispatch(fetchProfessionalsSuccess(professionals.data))
-        dispatch(loading(false))
+        dispatch(loading(false));
     } catch (err) {
         dispatch(loading(false));
         if (err.response?.data) {
@@ -55,7 +54,6 @@ export const sortProfessionals = (data) => async (dispatch) => {
 	try {
         const { product, location } = data
 		const professionals = await Axios.init().get(`professional?state=${location}?job_type=${product}`);
-		console.log(professionals.data, 'Professionals');
 		dispatch(successMessage('available professionals fetched'));
 		dispatch(fetchProfessionalsSuccess(professionals.data));
 		dispatch(loading(false));
@@ -92,6 +90,26 @@ export const viewProfessional = (userSlug) => async (dispatch) => {
 		} else if (err?.message) {
 			console.log(err.message);
 			// dispatch(errorMessage(err.message));
+		}
+	}
+};
+
+export const updateProfessional = (data) => async (dispatch) => {
+	dispatch(loading(true));
+	try {
+		const professional = await Axios.init().put(`professional/`, {
+			...data
+		});
+		console.log(professional.data, "Professionals");
+		dispatch(loading(false));
+	} catch (err) {
+		dispatch(loading(false));
+		if (err.response?.data) {
+			dispatch(errorMessage(err.response.data?.message));
+			return;
+		} else if (err?.message) {
+			console.log(err.message);
+			dispatch(errorMessage(err.message));
 		}
 	}
 };

@@ -5,6 +5,8 @@ const INITIAL_STATE = {
     full_name: '',
     joined: '',
     slug: '',
+    profData: {},
+    isAuth: false
 };
 
 const loginReducer = (state = INITIAL_STATE, action) => {
@@ -18,6 +20,30 @@ const loginReducer = (state = INITIAL_STATE, action) => {
                 full_name,
                 joined,
                 slug
+            }
+        
+        case actionTypes.LOGIN_PROF_SUCCESS:
+            console.log(action.data, 'actiondata')
+            const { fullName, ratingAvg, userSlug, experience, comment, profession  } = action.data.data;
+
+            return {
+                ...state,
+                profData: {
+                    fullName,
+                    ratingAvg,
+                    userSlug,
+                    experience,
+                    comment,
+                    profession,
+                    joined: action.data.data.joined,
+                    location: action.data.data.state
+                }
+            }
+
+        case actionTypes.IS_AUTH:
+            return {
+                ...state,
+                isAuth: action.payload
             }
 
         default:

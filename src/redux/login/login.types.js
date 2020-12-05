@@ -1,3 +1,5 @@
 export const actionTypes = {
     LOGIN_SUCCESS: 'LOGIN_SUCCESS',
+    LOGIN_PROF_SUCCESS: 'LOGIN_PROF_SUCCESS',
+    IS_AUTH: 'IS_AUTH'
 }
