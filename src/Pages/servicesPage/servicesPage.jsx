@@ -3,7 +3,7 @@ import "./servicesPage.scss";
 import TopNav from "../../components/topNav/topNav";
 import { FooterThin, FooterWide } from "../../components/footer/footer";
 
-import { AiOutlineWarning } from 'react-icons/ai'
+import { AiOutlineComment } from 'react-icons/ai'
 import ViewModal from "../../components/viewModal/viewModal";
 import ReactStars from "react-rating-stars-component";
 import { useDispatch, useSelector } from 'react-redux'
@@ -34,16 +34,16 @@ const ServicesPage = () => {
       authModal = (
           <ViewModal modal={modal} showModal={closeModal}>
               <div className='professional__authmodal'>
-                  <div> <AiOutlineWarning /> </div>
+                  <div> <AiOutlineComment /> </div>
                   <div> Rate Proffesional</div>
                   <div> 
                   <ReactStars
                       count={5}
                       onChange={ratingChanged}
-                      size={20}
+                      size={40}
                       activeColor="#fa8964"
                       classNames="react_star"
-                      edit={false}
+                      edit={true}
                   />
             </div>
 
