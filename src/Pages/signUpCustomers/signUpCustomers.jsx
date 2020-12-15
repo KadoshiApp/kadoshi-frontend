@@ -1,7 +1,7 @@
-import React, { Fragment, useState, memo, useEffect } from "react";
-import { connect, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom'
-import Auth from '../../Auth.config'
+import React, { Fragment, useState, memo } from "react";
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+// import Auth from '../../Auth.config'
 
 import { signUpCustomer } from '../../redux/signUpCustomer/signUp.actions'
 import { errorMessage } from '../../redux/message/message.action'

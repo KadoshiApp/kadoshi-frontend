@@ -8,6 +8,7 @@ import messageReducer from './message/message.reducer';
 import signUpProfReducer from './signUpProffesional/signUpProf.reducers';
 import loginReducer from './login/login.reducer';
 import professionalReducer from './Professionals/professionals.reducer';
+import commentReducer from './comment/comment.reducer';
 
 const persistConfig = {
 	key: 'root',
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     messageReducer,
     signUpProfReducer,
     loginReducer,
+    commentReducer,
     professionalReducer
 });
 

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./servicesPage.scss";
 import TopNav from "../../components/topNav/topNav";
 import { FooterThin, FooterWide } from "../../components/footer/footer";
 
-import { AiOutlineComment } from 'react-icons/ai'
+import { AiOutlineComment } from "react-icons/ai";
 import ViewModal from "../../components/viewModal/viewModal";
 import ReactStars from "react-rating-stars-component";
-import { useDispatch, useSelector } from 'react-redux'
-import { toggleAuthModal } from '../../redux/loading/loading.action'
-import ButtonBig from '../../components/buttonBig/buttonBig';
-// import ServiceProp from '../../serviceProp/serviceProp'
+import { useDispatch, useSelector } from "react-redux";
+import { toggleAuthModal } from "../../redux/loading/loading.action";
+import ButtonBig from "../../components/buttonBig/buttonBig";
+import { errorMessage } from "../../redux/message/message.action";
+import { loginComment } from "../../redux/comment/comment.action";
 import ServicesHead from "../../components/servicesHead/servicesHead";
 import ServiceBody from "../../components/serviceBody/serviceBody";
 import ServiceCarousel from "../../components/serviceCarousel/serviceCarousel";
@@ -17,48 +18,70 @@ import ServiceComment from "../../components/serviceComment/serviceComment";
 import { Textarea } from "@chakra-ui/core";
 
 const ServicesPage = () => {
+  const dispatch = useDispatch();
+  const modal = useSelector((state) => state.loadingReducer.modal);
+  const initialState = {
+    comment: ' ',
+  };
+  const [ inputData, setInputData ] = useState(initialState)
+  const { comment } = inputData
 
-  const dispatch = useDispatch()
-  const modal = useSelector((state) => state.loadingReducer.modal)
-  const ratingChanged = (newRating) => {
-    return
-};
-
-    const closeModal = () => {
-      dispatch(toggleAuthModal())
+  const handleInputs = (e) => {
+    setInputData(e.target.value);
+  }
+  const onSubmit = () => {
+    if (!comment) {
+      return dispatch(errorMessage("Fill all fields"))
     }
-  
+    if (comment) {
+      return dispatch(loginComment({comment}))
+    }
+  }
+
+  const closeModal = () => {
+    dispatch(toggleAuthModal());
+  };
 
   let authModal = <div> </div>;
   if (modal) {
-      authModal = (
-          <ViewModal modal={modal} showModal={closeModal}>
-              <div className='professional__authmodal'>
-                  <div> <AiOutlineComment /> </div>
-                  <div> Rate Proffesional</div>
-                  <div> 
-                  <ReactStars
-                      count={5}
-                      onChange={ratingChanged}
-                      size={40}
-                      activeColor="#fa8964"
-                      classNames="react_star"
-                      edit={true}
-                  />
-            </div>
+    authModal = (
+      <ViewModal modal={modal} showModal={closeModal}>
+        <div className="professional__authmodal">
+          <div>
+            {" "}
+            <AiOutlineComment />{" "}
+          </div>
+          <div> Rate Proffesional</div>
+          <div>
+            <ReactStars
+              count={5}
+              onChange={handleInputs}
+              size={40}
+              activeColor="#fa8964"
+              classNames="react_star"
+              name='rating'
+              edit={true}
+            />
+          </div>
 
-            <Textarea className="com" isInvalid placeholder="Add Comment" />
-            <ButtonBig caption='Add comments' />
-              </div>
-          </ViewModal>
-      );
+          <Textarea
+            className="com"
+            value={comment}
+            isInvalid
+            placeholder="Add Comment"
+            onChange={handleInputs}
+            name='comment' />
+          <ButtonBig caption="Add comments" clicked={onSubmit} />
+        </div>
+      </ViewModal>
+    );
   }
 
-  console.log(modal, 'modal')
+  console.log(modal, "modal");
 
   return (
     <div className="services_body">
-      <div className="services_body_cont"> 
+      <div className="services_body_cont">
         <TopNav />
         <ServicesHead />
       </div>
@@ -94,7 +117,7 @@ const ServicesPage = () => {
         {authModal}
         <ServiceComment />
       </div>
-      <div className='carousel__footer'>
+      <div className="carousel__footer">
         <FooterWide />
         <FooterThin />
       </div>
