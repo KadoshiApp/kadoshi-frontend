@@ -21,7 +21,9 @@ const UpdateProfile = () => {
 		comment: '',
 		email: ''
 	};
-	const dispatch = useDispatch()
+    const dispatch = useDispatch()
+    const professionalData = useSelector((state) => state.professionalReducer.professionalData);
+    console.log(professionalData, 'Professional Data');
     const [ inputData, setInputData ] = useState(initialState)
     const { full_name, comment, experience, category, location, email } = inputData
 

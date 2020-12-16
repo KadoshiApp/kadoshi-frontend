@@ -13,8 +13,8 @@ import './topNav.scss';
 const TopNav = () => {
     const [ showDrop, setShowDrop ] = useState(false);
     const dispatch = useDispatch()
-    const profUser = useSelector((state) => state.loginReducer.profData.userSlug);
-    const user = useSelector((state) => state.signUpProfReducer.userSlug);
+    const profUser = useSelector((state) => state.loginReducer?.profData?.userSlug);
+    const user = useSelector((state) => state.signUpProfReducer?.userSlug);
     const history = useHistory()
 
     const logout  = () => {

@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/core";
 import { FooterThin } from "../../components/footer/footer";
 
-import "./passwordConfirmation.scss";
 
 const PasswordConfirmation = () => {
   const dispatch = useDispatch();

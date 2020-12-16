@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Axios from '../../Axios.config';
 import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
+import { loading } from '../../redux/loading/loading.action'
 import { NavLink } from "react-router-dom";
-// import Auth from '../../Auth.config';
-import { loginClient, loginProf } from "../../redux/login/login.actions";
 import {
   Icon,
   Input,
@@ -30,17 +30,29 @@ const ForgotPassword = () => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (!email || !type) {
       return dispatch(errorMessage("Fill all fields"));
     }
-    if (email && type === "Client(User)") {
-      return dispatch(loginClient({ email }));
-    }
-    if (email && type === "Professional(Service Provider)") {
-      return dispatch(loginProf({ email }));
+
+    if (email && type) {
+      dispatch(loading(true))
+      try {
+        const data = await Axios.init().post(
+					"https://kadoshiservices.herokuapp.com/api/forgetpassword",
+					{ email, usertype: type }
+				);
+        console.log(data);
+        dispatch(loading(false));
+      } catch (err) {
+        dispatch(loading(false));
+        console.log(err)
+      }
     }
   };
+
+
+
   return (
     <div className="forgot_password_container">
       <div className="forgot_password_body">
@@ -63,6 +75,7 @@ const ForgotPassword = () => {
           </InputGroup>
 
           <Select
+            placeholder='type'
             variant="outline"
             value={type}
             name="type"
@@ -70,8 +83,7 @@ const ForgotPassword = () => {
           >
             <option value="Client(User)"> Client(User) </option>
             <option value="Professional(Service Provider)">
-              {" "}
-              Professional(Service Provider){" "}
+              Professional(Service Provider)
             </option>
           </Select>
         </Stack>

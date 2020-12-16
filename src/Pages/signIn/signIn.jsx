@@ -104,6 +104,9 @@ const SignIn = () => {
                             <div>
                                 Dont Have An Account? <Link to='/account'>SIGN UP</Link>
                             </div>
+                            <div>
+                                <Link to='/forgotPassword'>Forgot Password?</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
