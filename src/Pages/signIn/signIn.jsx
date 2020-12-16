@@ -80,7 +80,8 @@ const SignIn = () => {
                                         type='password'
                                         value={password}
                                         onChange={handleInputs}
-                                        name='password'  />
+                                        name='password'
+                                    />
                                     <InputRightElement children={<Icon name='lock' color='#fff' />} />
                                 </InputGroup>
 
