@@ -3,7 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import { FaUserAlt } from 'react-icons/fa'
 import Auth from '../../Auth.config'
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../redux/login/login.actions'
 import { successMessage } from '../../redux/message/message.action'
 
@@ -13,6 +13,8 @@ import './topNav.scss';
 const TopNav = () => {
     const [ showDrop, setShowDrop ] = useState(false);
     const dispatch = useDispatch()
+    const profUser = useSelector((state) => state.loginReducer?.profData?.userSlug);
+    const user = useSelector((state) => state.signUpProfReducer?.userSlug);
     const history = useHistory()
 
     const logout  = () => {
@@ -26,9 +28,9 @@ const TopNav = () => {
         if (Auth.isAuthenticated() === true) {
             toggle = (
                 <div className='top__nav_toggle'>
-                    <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div>
+                    { profUser || user ? <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div>: null }
                     <div onClick={logout}> SIGN OUT </div>
-                </div>
+                </div> 
             )
         } else {
             toggle = (

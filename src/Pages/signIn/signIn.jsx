@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-// import Auth from '../../Auth.config'
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
 import { loginClient, loginProf } from '../../redux/login/login.actions'
 
@@ -10,12 +9,14 @@ import { Icon, Input, InputGroup, InputRightElement, Stack, Select } from "@chak
 import TopNav from '../../components/topNav/topNav';
 import { FooterThin } from "../../components/footer/footer";
 
-
 import './signIn.scss';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 
 const SignIn = () => {
     const dispatch = useDispatch() 
+    const { push } = useHistory()
+    const isAuth = useSelector((state) => state.loginReducer.isAuth);
+
     const initialState = {
         email: '',
         password: '',
@@ -24,6 +25,13 @@ const SignIn = () => {
     const [ inputData, setInputData ] = useState(initialState)
     const { email, password, type } = inputData
 
+    useEffect(() => {
+        if (isAuth) {
+            window.setTimeout(() => {
+                push("/services");
+            }, 1500);
+        }
+    }, [push, isAuth]);
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -96,6 +104,9 @@ const SignIn = () => {
                                 clicked={onSubmit} />
                             <div>
                                 Dont Have An Account? <Link to='/account'>SIGN UP</Link>
+                            </div>
+                            <div>
+                                <Link to='/forgotPassword'>Forgot Password?</Link>
                             </div>
                         </div>
                     </div>

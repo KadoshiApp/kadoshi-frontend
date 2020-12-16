@@ -1,8 +1,8 @@
-import React, { Fragment, memo, useState } from "react";
+import React, { Fragment, memo, useState, useEffect } from "react";
 import { Icon, Input, InputGroup, InputLeftElement, Select, Stack } from "@chakra-ui/core";
 import { MdAccountBox } from 'react-icons/md';
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+import { Link, useHistory } from "react-router-dom";
+import { connect, useSelector } from 'react-redux';
 
 import { errorMessage } from '../../redux/message/message.action'
 import { signUpProf } from '../../redux/signUpProffesional/signUpProf.action'
@@ -26,8 +26,19 @@ const SignUpProfessional = memo(({
         experience: ''
     }
 
+	const isAuth = useSelector(state => state.loginReducer.isAuth)
+	const { push } = useHistory();
     const [ inputData, setInputData ] = useState(initialState)
-    const { full_name, email, password, address, job_type, experience } = inputData
+	const { full_name, email, password, address, job_type, experience } = inputData
+	console.log(isAuth, 'isAuth')
+
+	 useEffect(() => {
+		if (isAuth) {
+			window.setTimeout(() => {
+				push("/services");
+			}, 1500);
+		}
+	}, [push, isAuth ]);
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -81,7 +92,7 @@ const SignUpProfessional = memo(({
 										<option value="Tech/IT"> Tech/IT </option>
 										<option value="Transport"> Transport </option>
 										<option value="Engineering"> Engineering </option>
-										<option value="Other"> Transport </option>
+										<option value="Other"> Other </option>
 									</Select>
 									<InputGroup>
 										<InputLeftElement

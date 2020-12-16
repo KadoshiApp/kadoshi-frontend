@@ -4,6 +4,7 @@ import Auth from "../../Auth.config";
 
 import { loading } from "./../loading/loading.action";
 import { errorMessage, successMessage } from '../message/message.action'
+import { isAuth } from '../login/login.actions'
 
 export const signUpSuccess = (payload) => {
     return {
@@ -28,10 +29,12 @@ export const signUpCustomer = (data) => async (dispatch) => {
         })
         dispatch(loading(false));
         Auth.saveToken(signedUp.data.token);
+        dispatch(isAuth(true))
         dispatch(successMessage(signedUp.data.message))
         dispatch(signUpSuccess(signedUp.data.data));
     } catch (err) {
         dispatch(loading(false));
+        dispatch(isAuth(false))
         if (err.response?.data) {
             dispatch(signUpFail(err.response.data.message))
             dispatch(errorMessage(err.response.data.message))
