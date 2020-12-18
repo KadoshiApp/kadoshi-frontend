@@ -35,12 +35,13 @@ function ProfessionalPage() {
     }
 
     const searchClicked = () => {
-        if (!inputData.location || !inputData.product) {
+        if (!inputData.location && !inputData.product) {
             return dispatch(errorMessage('Enter all fields.'))
         }
         
-        if (inputData.location && inputData.product) {
+        if (inputData.location || inputData.product) {
             dispatch(sortProfessionals(inputData))
+            setInputData({...inputData, product: '', location: ''})
         }
     }
 
@@ -82,15 +83,13 @@ function ProfessionalPage() {
             );
         }
     
-    console.log(modal, 'modal')
-
     return (
         <>
+        {authModal}
         <div className='professional-page-header'>
             <TopNav />
             <ProfessionalCaption />
         </div>
-        {authModal}
         <ProfessionalBody values={inputData} change={handleInputs} clicked={searchClicked} />
         <div className='page-button'>
             < ButtonBig caption='go home' clicked={goHome} />

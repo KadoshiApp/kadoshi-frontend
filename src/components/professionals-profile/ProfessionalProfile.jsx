@@ -34,7 +34,7 @@ function ProfessionalProfile({data}) {
             <div className='profile-info'>
                 <div className='profile-name'>
                 {data.fullName}
-                <br /><span> Plumber </span> </div>
+                <br /><span> {data.profession} </span> </div>
                 <div className='profile-rating'>
                     <ReactStars
                         count={5}
@@ -43,6 +43,7 @@ function ProfessionalProfile({data}) {
                         activeColor="#fa8964"
                         classNames="react_star"
                         edit={false}
+                        value={data?.ratingAvg}
                     />
                 </div>
                     <button className='body-button' onClick={() => view(data.userSlug)}>VIEW</button>

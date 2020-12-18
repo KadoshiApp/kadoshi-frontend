@@ -1,11 +1,11 @@
 import React from 'react'
-import { Icon, Input, InputGroup, InputLeftElement, Stack, Select, Textarea } from "@chakra-ui/core";
-import { MdAccountBox } from "react-icons/md";
+import { Input, InputGroup, InputLeftElement, Stack, Select, Textarea } from "@chakra-ui/core";
+import { MdAccountBox, MdWork } from "react-icons/md";
 
 import './updateProfileInputs.scss';
 
 const UpdateProfileInputs = ({ handleInputs, inputData }) => {
-    const { full_name, comment, experience, category, location, email } = inputData
+    const { full_name, comment, experience, category, location } = inputData
     
     return (
 			<div className="update__profile_inputs">
@@ -40,7 +40,7 @@ const UpdateProfileInputs = ({ handleInputs, inputData }) => {
 
 					<InputGroup>
 						<InputLeftElement
-							children={<MdAccountBox size="20px" />}
+							children={<MdWork size="20px" />}
 						/>
 						<Input
 							onChange={handleInputs}
@@ -48,17 +48,6 @@ const UpdateProfileInputs = ({ handleInputs, inputData }) => {
 							name="experience"
 							type="number"
 							placeholder="Years Of Experience"
-						/>
-					</InputGroup>
-
-					<InputGroup>
-						<InputLeftElement children={<Icon name="email" size="20px" />} />
-						<Input
-							type="email"
-							placeholder="Email"
-							onChange={handleInputs}
-							name="email"
-							value={email}
 						/>
 					</InputGroup>
 

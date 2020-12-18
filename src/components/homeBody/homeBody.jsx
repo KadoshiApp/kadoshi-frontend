@@ -12,7 +12,7 @@ const HomeBody = () => {
                             Get Registered!
                         </span> 
                     </div>
-                    <div>
+                    <div style={{marginTop: '45px'}}>
                     Register as a Professional or a client.
                     </div>
                 </div>
@@ -33,10 +33,8 @@ const HomeBody = () => {
 
             <div className='home__body_one _body_three'>
                 <div className='home__body_one_container'>
-                    <div className='home__body_onestep _stepthree'>Step Three: 
-                        <span>
-                            Select Professional!
-                        </span> 
+                    <div className='home__body_onestep _stepthree'>
+                        Step Three: <span>Select Professional!</span> 
                     </div>
                     <div>
                     Chose your prefered professionals based on profile rating recomendation and pictures of previous works.
