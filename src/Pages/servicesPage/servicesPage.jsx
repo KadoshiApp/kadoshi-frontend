@@ -29,7 +29,7 @@ const ServicesPage = ({ match }) => {
     if (user && Auth.getToken()) {
       dispatch(viewProfessional(user));
 		}
-  }, [])
+  }, [user, dispatch])
   console.log(professionalData, 'data')
 
   const initialState = {
