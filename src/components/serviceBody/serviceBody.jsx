@@ -2,11 +2,11 @@ import React from "react";
 import ProffesionalRating from "../serviceRating/serviceRating";
 import "./serviceBody.scss";
 
-const ServiceBody = () => {
+const ServiceBody = ({data}) => {
   return (
     <div className="service_body_container">
       <div className="service_body_p">VEIW PROFFESSIONAL</div>
-      <ProffesionalRating />
+      <ProffesionalRating data={data} />
     </div>
   );
 };

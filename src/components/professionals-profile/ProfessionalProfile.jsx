@@ -2,9 +2,7 @@ import React from 'react'
 import Auth from '../../Auth.config';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { viewProfessional } from '../../redux/Professionals/professionals.actions'
 import { toggleAuthModal } from '../../redux/loading/loading.action'
-// import ProfessionalRating from '../professionalRating/ProfessionalRating';
 import ReactStars from "react-rating-stars-component";
 
 import './professionalProfile.scss';
@@ -19,8 +17,7 @@ function ProfessionalProfile({data}) {
 
     const view = (user) => {
         if (user && Auth.getToken()) {
-            history.push('/professional')
-            dispatch(viewProfessional(user))
+            history.push(`/professional/${user}`)
         } else {
             dispatch(toggleAuthModal())
         }

@@ -34,16 +34,16 @@ function App() {
 				<ProgressSwitch />
 			  <Switch>
 					<Route exact path="/" component={HomePage} />
-				  <Route exact path="/signIn" component={SignIn} />
+				  	<Route exact path="/signIn" component={SignIn} />
 					<Route exact path="/about" component={AboutPage} />
-				  <Route exact path="/account" component={AccountType} />
-				  <Route exact path="/forgotPassword" component={ForgotPassword} />
-				  <Route exact path="/confirmation" component={PasswordConfirmation} />
+				  	<Route exact path="/account" component={AccountType} />
+				   	<Route exact path="/forgotPassword" component={ForgotPassword} />
+				  	<Route exact path="/confirmation" component={PasswordConfirmation} />
 					<Route exact path="/signUp" component={SignUpProfessional} />
 					<Route exact path="/client" component={SignUpCustomers} />
 					<Route exact path="/contact" component={ContactPage} />
 					<Route exact path="/services" component={ProfessionalPage} />
-					<Route exact path="/professional" component={ServicesPage} />
+					<Route exact path="/professional/:slug" component={ServicesPage} />
 					<Route exact path="/profile" component={UpdateProfile} />
 					<Route exact path="/drop" component={UploadModal} />
 				</Switch>

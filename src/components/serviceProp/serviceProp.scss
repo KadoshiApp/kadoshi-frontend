@@ -17,8 +17,13 @@
 }
 .service_comment_container {
     width: 75%;
+    overflow-y: scroll;
     margin: auto;
     height: 800px;
+    scrollbar-width: 2px;
+}
+.service_comment_container::-webkit-scrollbar {
+    width: 2px;
 }
 .lighter {
     margin-top: 30px;

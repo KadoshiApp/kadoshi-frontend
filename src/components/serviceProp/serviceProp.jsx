@@ -7,8 +7,7 @@ const ServiceProp = ({ author, date, comment, rating }) => {
     return (
         <div>
             <div className="service_prop"> 
-                {author}
-                {date} 
+                {author} {date} 
                 <span> 
                     <ReactStars
                         count={5}

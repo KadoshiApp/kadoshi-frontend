@@ -92,7 +92,7 @@ function ProfessionalPage() {
         </div>
         <ProfessionalBody values={inputData} change={handleInputs} clicked={searchClicked} />
         <div className='page-button'>
-            < ButtonBig caption='go home' clicked={goHome} />
+            <ButtonBig caption='go home' clicked={goHome} />
         </div>
         <FooterWide />
         <FooterThin />
