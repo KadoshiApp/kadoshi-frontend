@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from '../../Axios.config';
 import { useDispatch } from "react-redux";
-import { errorMessage } from "../../redux/message/message.action";
+import { errorMessage, successMessage } from "../../redux/message/message.action";
 import { loading } from '../../redux/loading/loading.action'
 import { NavLink } from "react-router-dom";
 import {
@@ -36,17 +36,18 @@ const ForgotPassword = () => {
     }
 
     if (email && type) {
-      dispatch(loading(true))
       try {
+        dispatch(loading(true))
         const data = await Axios.init().post(
 					"https://kadoshiservices.herokuapp.com/api/forgetpassword",
-					{ email, usertype: type }
+					{ email, usertype: type.split("(")[0].toLowerCase() }
 				);
-        console.log(data);
-        dispatch(loading(false));
+        data.data.message && 
+        dispatch(successMessage("sent, check your mail."));
+				dispatch(loading(false));
       } catch (err) {
         dispatch(loading(false));
-        console.log(err)
+        dispatch(errorMessage(err.message));
       }
     }
   };

@@ -13,7 +13,7 @@ import './updateProfile.scss';
 
 const UpdateProfile = () => {
     const professionalData = useSelector((state) => state.loginReducer.profData);
-    const profData = useSelector((state) => state.professionalReducer);
+    const imgUrl = 'https://lh3.googleusercontent.com/proxy/ZU8WPSFof4Ts5crpfzX8zlWhXuRKe0mjII9HY_rweY8v0_wRpWF3nNHyETYSgeLb2RKB2ZmtgCSbAhA_gO_IWkfHwXhKQAQMM0V3fgdQkVYKjtuFLeNlZb0tiBJuNw0KaspLr6tPeUro1SREz4Dzwm-bBzCkG8nswamyRb1DZtkISwxRJF68dQ'
     const initialState = {
         full_name: professionalData.fullName,
 		category: professionalData.profession,
@@ -23,7 +23,6 @@ const UpdateProfile = () => {
 	};
     const dispatch = useDispatch();
     console.log(professionalData, 'Professional Data');
-    console.log(profData, "Prof Data");
     const [ inputData, setInputData ] = useState(initialState)
     const [ profilePic, setProfilePic ] = useState('')
     const [ completedWork, setCompletedWork ] = useState('');
@@ -60,7 +59,7 @@ const UpdateProfile = () => {
                         <div className='update__profile_overlay'>
                             <Upload figure={uploadIcon} setUploadUrl={setProfilePic} />
                         </div>
-                        <img src='https://thumbs.dreamstime.com/z/portrait-professional-construction-worker-hammer-tool-belt-white-background-150331239.jpg' alt='' />
+                        <img src={imgUrl} alt='' />
                     </div>
                     <div className='update__img_caption'> Upload Profile Photo </div>
 				    <UpdateProfileInputs handleInputs={handleInputs} inputData={inputData} />

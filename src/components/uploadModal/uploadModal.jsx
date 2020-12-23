@@ -21,7 +21,6 @@ const DropzoneDialogExample = ({ figure, setUploadUrl, setWorkUrl }) => {
 		//Saving files to state for further use and closing Modal.
 		setFiles(files)
 		setOpen(false)
-		console.log(files)
 		uploadImage(files)
 	}
 
