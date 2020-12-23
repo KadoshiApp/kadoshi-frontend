@@ -5,23 +5,6 @@ import { toggleAuthModal } from '../../redux/loading/loading.action'
 import ServiceProp from '../serviceProp/serviceProp'
 import ButtonBig from '../buttonBig/buttonBig';
 
-const comments = [
-	{
-		author: "Tunde Alabi",
-		rating: 2,
-		date: "(22 / 4 / 2020)",
-		comment:
-			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aut, temporibus at, dolorem officiis sed voluptas debitis harum quidem nostrum ipsam magnam enim esse iure veritatis repudiandae nulla exercitationem sunt odit dolores sint. Magnam quos ducimus, necessitatibus voluptas consectetur voluptatum.",
-	},
-	{
-		author: "Ukutu Edomba",
-		rating: 4,
-		date: "(15 / 5 / 2020)",
-		comment:
-			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aut, temporibus at, dolorem officiis sed voluptas debitis harum quidem nostrum ipsam magnam enim esse iure veritatis repudiandae nulla exercitationem sunt odit dolores sint. Magnam quos ducimus, necessitatibus voluptas consectetur voluptatum.",
-	},
-];
-
 const ServiceComment = ({ comments }) => {
   const dispatch = useDispatch()
 
