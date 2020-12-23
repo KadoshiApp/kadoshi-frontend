@@ -1,9 +1,8 @@
 import React from "react";
-// import { useHistory } from 'react-router-dom';
+import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { toggleAuthModal } from '../../redux/loading/loading.action'
 import ServiceProp from '../serviceProp/serviceProp'
-// import { Input, InputGroup, Stack } from "@chakra-ui/core";
 import ButtonBig from '../buttonBig/buttonBig';
 
 const comments = [
@@ -23,8 +22,7 @@ const comments = [
 	},
 ];
 
-const ServiceComment = () => {
-  // const history = useHistory()
+const ServiceComment = ({ comments }) => {
   const dispatch = useDispatch()
 
   const addComment = () => {
@@ -35,12 +33,12 @@ const ServiceComment = () => {
     <div className="service_comment_container">
       <div className="comment_topic">Comments</div>
       <hr className="horiz" />
-      {comments.map((comment, index) => (
+      {comments.map(comment => (
         <ServiceProp
-          key={index}
-          rating={comment.rating}
-          author={comment.author}
-          date={comment.date}
+          key={comment._id}
+          rating={comment?.rating || 0}
+          author={comment?.author || 'Anonymous'}
+          date={moment(+comment.date_created).format("YYYY-MM-DD")}
           comment={comment.comment}
         />
       ))}
