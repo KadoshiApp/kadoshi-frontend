@@ -32,15 +32,13 @@ const ServicesPage = ({ match }) => {
   }, [user, dispatch])
   console.log(professionalData, 'data')
 
-  const initialState = {
-    comment: ' ',
-  };
-  const [ inputData, setInputData ] = useState(initialState)
-  const { comment } = inputData
+  const [ comment, setComment ] = useState('')
+  const [ rating, setRating ] = useState(0);
 
-  const handleInputs = (e) => {
-    setInputData(e.target.value);
-  }
+  const ratingChanged = (newRating) => {
+		setRating(newRating)
+	};
+
   const onSubmit = () => {
     if (!comment) {
       return dispatch(errorMessage("Fill all fields"))
@@ -57,35 +55,37 @@ const ServicesPage = ({ match }) => {
   let authModal = <div> </div>;
   if (modal) {
     authModal = (
-      <ViewModal modal={modal} showModal={closeModal}>
-        <div className="professional__authmodal">
-          <div>
-            <AiOutlineComment />
-          </div>
-          <div> Rate Proffesional</div>
-          <div>
-            <ReactStars
-              count={5}
-              onChange={handleInputs}
-              size={40}
-              activeColor="#fa8964"
-              classNames="react_star"
-              name='rating'
-              edit={true}
-            />
-          </div>
+			<ViewModal modal={modal} showModal={closeModal}>
+				<div className="professional__authmodal">
+					<div>
+						<AiOutlineComment />
+					</div>
+					<div> Rate Proffesional</div>
+					<div>
+						<ReactStars
+							count={5}
+							value={rating}
+							onChange={ratingChanged}
+							size={40}
+							activeColor="#fa8964"
+							classNames="react_star"
+							name="rating"
+							edit={true}
+						/>
+					</div>
 
-          <Textarea
-            className="com"
-            value={comment}
-            isInvalid
-            placeholder="Add Comment"
-            onChange={handleInputs}
-            name='comment' />
-          <ButtonBig caption="Add comments" clicked={onSubmit} />
-        </div>
-      </ViewModal>
-    );
+					<Textarea
+						className="com"
+						value={comment}
+						isInvalid
+						placeholder="Add Comment"
+						onChange={(e) => setComment(e.target.value)}
+						name="comment"
+					/>
+					<ButtonBig caption="Add comments" clicked={onSubmit} />
+				</div>
+			</ViewModal>
+		);
   }
 
   console.log(modal, "modal");
