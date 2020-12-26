@@ -6,7 +6,7 @@ import ButtonSmall from "../buttonSmall/buttonSmall";
 const ProffesionalRating = ({data}) => {
   const [phone, setPhone] = useState(false)
   const [location, setLocation] = useState(false);
-  const imageUrl = data?.image || 'https://lh3.googleusercontent.com/proxy/ZU8WPSFof4Ts5crpfzX8zlWhXuRKe0mjII9HY_rweY8v0_wRpWF3nNHyETYSgeLb2RKB2ZmtgCSbAhA_gO_IWkfHwXhKQAQMM0V3fgdQkVYKjtuFLeNlZb0tiBJuNw0KaspLr6tPeUro1SREz4Dzwm-bBzCkG8nswamyRb1DZtkISwxRJF68dQ'
+  const imageUrl = data?.image || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
   return (
     <div className="service_rating_container">
       <div className="service_rating">

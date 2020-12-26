@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { errorMessage } from "../../redux/message/message.action";
+import { useHistory } from 'react-router-dom';
+import { loading } from "../../redux/loading/loading.action";
+import Axios from "../../Axios.config";
+import { errorMessage, successMessage } from "../../redux/message/message.action";
 import { NavLink } from "react-router-dom";
-import { loginClient, loginProf } from "../../redux/login/login.actions";
 import {
   Icon,
   Input,
@@ -13,29 +15,45 @@ import {
 import { FooterThin } from "../../components/footer/footer";
 
 
-const PasswordConfirmation = () => {
+const PasswordConfirmation = ({location}) => {
   const dispatch = useDispatch();
+  const history = useHistory()
   const initialState = {
-    email: "",
-    type: "",
-  };
+		confirmPassword: "",
+		password: "",
+	};
 
   const [inputData, setInputData] = useState(initialState);
-  const { email, password } = inputData;
+  const { password, confirmPassword } = inputData;
+
+  useEffect(() => {
+    if (!location.pathname.split("resetpassword/")[1])
+			return history.push("/");
+  }, [history, location.pathname ])
 
   const handleInputs = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = () => {
-    if (!email) {
-      return dispatch(errorMessage("Fill all fields"));
-    }
-    if (email === "Client(User)") {
-      return dispatch(loginClient({ email }));
-    }
-    if (email === "Professional(Service Provider)") {
-      return dispatch(loginProf({ email }));
+  const onSubmit = async () => {
+    if (!password || !confirmPassword) return dispatch(errorMessage('fill all fields.'))
+    if (password !== confirmPassword) return dispatch(errorMessage('passwords do not match'));
+    dispatch(loading(true))
+    try {
+      const query = location.pathname.split("resetpassword/")[1];
+      const authArray = query.split("/");
+      await Axios.init().post(
+        "https://kadoshiservices.herokuapp.com/api/createpassword",
+        { password, token: authArray[1], id: authArray[0] }
+      );
+      dispatch(loading(false));
+      dispatch(successMessage('password successfully changed'))
+      setTimeout(() => {
+        history.push("/signIn");
+      }, 3000);
+    } catch (err) {
+      dispatch(loading(false));
+      dispatch(errorMessage(err.message))
     }
   };
   return (
@@ -58,16 +76,15 @@ const PasswordConfirmation = () => {
               name="password"
             />
             <InputRightElement children={<Icon name="lock" color="#fff" />} />
-                  </InputGroup>
-                  <div>Confirm New Password</div>
-
+          </InputGroup>
+            <div>Confirm New Password</div>
           <InputGroup>
             <Input
-              placeholder="Password"
+              placeholder="Confirm Password"
               type="password"
-              value={password}
+              value={confirmPassword}
               onChange={handleInputs}
-              name="password"
+              name="confirmPassword"
             />
             <InputRightElement children={<Icon name="lock" color="#fff" />} />
           </InputGroup>
