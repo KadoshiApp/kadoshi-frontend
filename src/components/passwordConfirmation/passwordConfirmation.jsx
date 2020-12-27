@@ -41,9 +41,11 @@ const PasswordConfirmation = ({location}) => {
     dispatch(loading(true))
     try {
       const query = location.pathname.split("resetpassword/")[1];
+      const userType = location.pathname.split("resetpassword/")[0];
       const authArray = query.split("/");
+      const type = userType.split('/')[2];
       await Axios.init().post(
-        "https://kadoshiservices.herokuapp.com/api/createpassword",
+        `https://kadoshiservices.herokuapp.com/api/createpassword/${type}`,
         { password, token: authArray[1], id: authArray[0] }
       );
       dispatch(loading(false));
@@ -53,6 +55,7 @@ const PasswordConfirmation = ({location}) => {
       }, 3000);
     } catch (err) {
       dispatch(loading(false));
+      if (err.response.status === 500) return dispatch(errorMessage('an error occured!'))
       dispatch(errorMessage(err.message))
     }
   };
