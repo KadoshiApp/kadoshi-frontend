@@ -13,7 +13,7 @@ import './updateProfile.scss';
 
 const UpdateProfile = () => {
     const professionalData = useSelector((state) => state.loginReducer.profData);
-    const imgUrl = 'https://lh3.googleusercontent.com/proxy/ZU8WPSFof4Ts5crpfzX8zlWhXuRKe0mjII9HY_rweY8v0_wRpWF3nNHyETYSgeLb2RKB2ZmtgCSbAhA_gO_IWkfHwXhKQAQMM0V3fgdQkVYKjtuFLeNlZb0tiBJuNw0KaspLr6tPeUro1SREz4Dzwm-bBzCkG8nswamyRb1DZtkISwxRJF68dQ'
+    const imgUrl = 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
     const initialState = {
         full_name: professionalData.fullName,
 		category: professionalData.profession,
