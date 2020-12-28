@@ -30,7 +30,6 @@ const ServicesPage = ({ match }) => {
       dispatch(viewProfessional(user));
 		}
   }, [user, dispatch])
-  console.log(professionalData, 'data')
 
   const [ comment, setComment ] = useState('')
   const [ rating, setRating ] = useState('');
