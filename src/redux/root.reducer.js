@@ -12,7 +12,8 @@ import commentReducer from './comment/comment.reducer';
 
 const persistConfig = {
 	key: 'root',
-    storage
+    storage,
+    blacklist: ['loadingReducer']
 };
 
 const rootReducer = combineReducers({
