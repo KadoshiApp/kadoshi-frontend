@@ -11,9 +11,6 @@ import './professionalProfile.scss';
 function ProfessionalProfile({data}) {
     const history = useHistory()
     const dispatch = useDispatch()
-    const ratingChanged = (newRating) => {
-        return
-    };
 
     const view = (user) => {
         if (user && Auth.getToken()) {
@@ -35,7 +32,6 @@ function ProfessionalProfile({data}) {
                 <div className='profile-rating'>
                     <ReactStars
                         count={5}
-                        onChange={ratingChanged}
                         size={20}
                         activeColor="#fa8964"
                         classNames="react_star"

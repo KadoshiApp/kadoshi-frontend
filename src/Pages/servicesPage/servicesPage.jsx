@@ -26,7 +26,7 @@ const ServicesPage = ({ match }) => {
   const professionalData = useSelector((state) => state.professionalReducer.professionalData);
 
   useEffect(() => {
-    if (user && Auth.getToken()) {
+    if (user && Auth.isAuthenticated()) {
       dispatch(viewProfessional(user));
 		}
   }, [user, dispatch])

@@ -31,9 +31,9 @@ const ForgotPassword = () => {
   };
 
   const onSubmit = async () => {
-    if (!email || !type) {
-      return dispatch(errorMessage("Fill all fields"));
-    }
+    if (!email || !type) return dispatch(errorMessage("Fill all fields"));
+    if (!email) return dispatch(errorMessage("input your email address"));
+    if (!type) return dispatch(errorMessage("please select type"));
 
     if (email && type) {
       try {
