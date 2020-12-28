@@ -32,18 +32,24 @@ const ServicesPage = ({ match }) => {
   }, [user, dispatch])
 
   const [ comment, setComment ] = useState('')
-  const [ rating, setRating ] = useState(0);
+  const [ rating, setRating ] = useState('');
 
   const ratingChanged = (newRating) => {
 		setRating(newRating)
 	};
 
   const onSubmit = () => {
-    if (!comment) {
+    if (!comment || !rating) {
       return dispatch(errorMessage("Fill all fields"))
     }
-    if (comment) {
-      return dispatch(loginComment({comment}))
+    // if (comment || !rating) {
+    //   return dispatch(errorMessage("Rate Professional"))
+    // }
+    // if (!comment || rating) {
+    //   return dispatch(errorMessage("Fill in comment"))
+    // }
+    if (comment || rating) {
+      return dispatch(loginComment({comment, rating}))
     }
   }
 
@@ -56,9 +62,7 @@ const ServicesPage = ({ match }) => {
     authModal = (
 			<ViewModal modal={modal} showModal={closeModal}>
 				<div className="professional__authmodal">
-					<div>
-						<AiOutlineComment />
-					</div>
+					<div> <AiOutlineComment /> </div>
 					<div> Rate Proffesional</div>
 					<div>
 						<ReactStars

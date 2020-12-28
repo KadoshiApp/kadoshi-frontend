@@ -11,7 +11,7 @@ import professionalReducer from './Professionals/professionals.reducer';
 import commentReducer from './comment/comment.reducer';
 
 const persistConfig = {
-    key: 'root',
+	key: 'root',
     storage,
     blacklist: ['loadingReducer']
 };
