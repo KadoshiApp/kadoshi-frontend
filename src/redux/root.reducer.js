@@ -11,8 +11,9 @@ import professionalReducer from './Professionals/professionals.reducer';
 import commentReducer from './comment/comment.reducer';
 
 const persistConfig = {
-	key: 'root',
-    storage
+    key: 'root',
+    storage,
+    blacklist: ['loadingReducer']
 };
 
 const rootReducer = combineReducers({
