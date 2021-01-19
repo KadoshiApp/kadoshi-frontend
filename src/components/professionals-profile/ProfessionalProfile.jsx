@@ -23,7 +23,7 @@ function ProfessionalProfile({data}) {
     return (
         <div className='service-profile-info'>
             <div className='profile-pic'>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZ5bqdh9pF7hNdKVrYTboYSRiIfTFMidQXQw&usqp=CAU' className='profile-pic' alt="img"/>
+                <img src='https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png' className='profile-pic' alt="img"/>
             </div>
             <div className='profile-info'>
                 <div className='profile-name'>

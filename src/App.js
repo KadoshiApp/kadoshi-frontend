@@ -34,11 +34,11 @@ function App() {
 			<Route exact path="/account" component={AccountType} />
 			<Route exact path="/forgotPassword" component={ForgotPassword} />
 			<Route path="/createpassword" component={PasswordConfirmation} />
-			<Route exact path="/professional/:slug" component={ServicesPage} />
 			<Route exact path="/signUp" component={SignUpProfessional} />
 			<Route exact path="/client" component={SignUpCustomers} />
 			<Route exact path="/contact" component={ContactPage} />
 			<Route exact path="/services" component={ProfessionalPage} />
+			<Route exact path="/profile" component={UpdateProfile} />
 			<Redirect to="/" />
 		</Switch>
 	);

@@ -97,10 +97,11 @@ export const viewProfessional = (userSlug) => async (dispatch) => {
 export const updateProfessional = (data) => async (dispatch) => {
 	dispatch(loading(true));
 	try {
-		const professional = await Axios.init().put(`professional/`, {
+		const professional = await Axios.init().put(`professional`, {
 			...data
 		});
 		console.log(professional.data, "Professionals");
+		dispatch(successMessage(`${professional.data.message}`));
 		dispatch(loading(false));
 	} catch (err) {
 		dispatch(loading(false));

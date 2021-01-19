@@ -27,7 +27,7 @@ const ProffesionalRating = ({data}) => {
         <div className="generated_number"> Work Experience: {data?.experience} Years </div>
         <div className="btn_shift_center">
         <span className="star_bottom_left">
-          <ButtonSmall caption={ phone ? `${data?.phone}` : 'Phone' }
+          <ButtonSmall caption={ phone ? `0${data?.phoneNumber}` : 'Phone' }
             plain clicked={() => setPhone(!phone)} />
         </span>
         <span className="star_bottom_right">
