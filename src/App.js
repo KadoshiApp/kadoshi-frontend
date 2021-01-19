@@ -25,6 +25,7 @@ import IndeterminateProgressbar, {
 
 
 function App() {
+
 	let routes = (
 		<Switch>
 			<Route exact path="/" component={HomePage} />
@@ -37,6 +38,7 @@ function App() {
 			<Route exact path="/client" component={SignUpCustomers} />
 			<Route exact path="/contact" component={ContactPage} />
 			<Route exact path="/services" component={ProfessionalPage} />
+			<Route exact path="/profile" component={UpdateProfile} />
 			<Redirect to="/" />
 		</Switch>
 	);

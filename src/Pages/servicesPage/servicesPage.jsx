@@ -26,13 +26,13 @@ const ServicesPage = ({ match }) => {
   const professionalData = useSelector((state) => state.professionalReducer.professionalData);
 
   useEffect(() => {
-    if (user && Auth.getToken()) {
+    if (user && Auth.isAuthenticated()) {
       dispatch(viewProfessional(user));
 		}
   }, [user, dispatch])
 
   const [ comment, setComment ] = useState('')
-  const [ rating, setRating ] = useState('');
+  const [ rating, setRating ] = useState(0);
 
   const ratingChanged = (newRating) => {
 		setRating(newRating)
@@ -40,16 +40,11 @@ const ServicesPage = ({ match }) => {
 
   const onSubmit = () => {
     if (!comment || !rating) {
-      return dispatch(errorMessage("Fill all fields"))
+      return dispatch(errorMessage('Tell us what you think. Its anonymous'))
     }
-    // if (comment || !rating) {
-    //   return dispatch(errorMessage("Rate Professional"))
-    // }
-    // if (!comment || rating) {
-    //   return dispatch(errorMessage("Fill in comment"))
-    // }
     if (comment || rating) {
-      return dispatch(loginComment({comment, rating}))
+      dispatch(loginComment({ comment, rating: `${rating}`, user }));
+      dispatch(toggleAuthModal());
     }
   }
 
@@ -62,8 +57,8 @@ const ServicesPage = ({ match }) => {
     authModal = (
 			<ViewModal modal={modal} showModal={closeModal}>
 				<div className="professional__authmodal">
-					<div> <AiOutlineComment /> </div>
-					<div> Rate Proffesional</div>
+					<div> <AiOutlineComment size='70px' /> </div>
+					<div> Rate Proffesional </div>
 					<div>
 						<ReactStars
 							count={5}
@@ -90,8 +85,6 @@ const ServicesPage = ({ match }) => {
 			</ViewModal>
 		);
   }
-
-  console.log(modal, "modal");
 
   return (
     <div className="services_body">

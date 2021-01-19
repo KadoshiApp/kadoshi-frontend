@@ -14,10 +14,12 @@ const commentSuccess = (data) => ({
 
 export const loginComment = data => async dispatch => {
     dispatch(loading(true))
+    const { comment, rating, user } = data;
+    const body = { comment, rating };
      
     try {
-        const comment = await Axios.init().post('https://kadoshiservices.herokuapp.com/api/professional/johnny-joe-634450132887013200', {
-            ...data
+        const comment = await Axios.init().post(`https://kadoshiservices.herokuapp.com/api/professional/${user}`, {
+            ...body
         })
         dispatch(commentSuccess(comment.data))
         Auth.saveToken(comment.data.token)

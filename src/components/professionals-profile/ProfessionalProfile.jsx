@@ -11,9 +11,6 @@ import './professionalProfile.scss';
 function ProfessionalProfile({data}) {
     const history = useHistory()
     const dispatch = useDispatch()
-    const ratingChanged = (newRating) => {
-        return
-    };
 
     const view = (user) => {
         if (user && Auth.getToken()) {
@@ -26,7 +23,7 @@ function ProfessionalProfile({data}) {
     return (
         <div className='service-profile-info'>
             <div className='profile-pic'>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZ5bqdh9pF7hNdKVrYTboYSRiIfTFMidQXQw&usqp=CAU' className='profile-pic' alt="img"/>
+                <img src='https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png' className='profile-pic' alt="img"/>
             </div>
             <div className='profile-info'>
                 <div className='profile-name'>
@@ -35,7 +32,6 @@ function ProfessionalProfile({data}) {
                 <div className='profile-rating'>
                     <ReactStars
                         count={5}
-                        onChange={ratingChanged}
                         size={20}
                         activeColor="#fa8964"
                         classNames="react_star"

@@ -3,25 +3,26 @@ import React, { useState } from "react";
 import { loading } from '../../redux/loading/loading.action'
 import { errorMessage, successMessage } from '../../redux/message/message.action'
 import { useDispatch } from 'react-redux';
+import Axios from '../../Axios.config';
 
 import { DropzoneDialog } from "material-ui-dropzone";
 import Button from "@material-ui/core/Button";
 
-const DropzoneDialogExample = ({ figure, setUploadUrl, setWorkUrl }) => {
+const DropzoneDialogExample = ({ figure, setUploadUrl, setWorkUrl, userSlug }) => {
 	const dispatch = useDispatch()
 	const [open, setOpen] = useState(false)
 	const [files, setFiles] = useState([]);
 
 	const handleClose = () => {
-		setOpen(false)
+		setOpen(false);
 		console.log(files);
 	}
 
 	const handleSave = (files) => {
 		//Saving files to state for further use and closing Modal.
-		setFiles(files)
-		setOpen(false)
-		uploadImage(files)
+		setFiles(files);
+		setOpen(false);
+		uploadImage(files);
 	}
 
 	const uploadImage = async (file) => {
@@ -39,15 +40,24 @@ const DropzoneDialogExample = ({ figure, setUploadUrl, setWorkUrl }) => {
 			);
 			const file = await res.json();
 			if (figure === '+ add completed Work') {
-				setWorkUrl(file.secure_url)
+				const data = await Axios.init().put(
+					`https://kadoshiservices.herokuapp.com/api/professional/${userSlug}/works`,
+					{ url: file.secure_url }
+				);
+				console.log(data);
 			} else {
+				const data = await Axios.init().put(`professional`, {
+					profilePicture: file.secure_url,
+				});
+				console.log(data.data);
+
 				setUploadUrl(file.secure_url)
 			}
 			dispatch(successMessage('image uploaded!'))
 			dispatch(loading(false));
 		} catch (err) {
 			dispatch(loading(false));
-			dispatch(errorMessage("couldn't upload, try again."))
+			dispatch(errorMessage("couldn't upload, try again."));
 		}
 	};
 

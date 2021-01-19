@@ -23,13 +23,15 @@ const SignUpProfessional = memo(({
         password: '',
         address: '',
         job_type: '',
-        experience: ''
+		experience: '',
+		phoneNumber: '',
+		confirmPass: '',
     }
 
 	const isAuth = useSelector(state => state.loginReducer.isAuth)
 	const { push } = useHistory();
     const [ inputData, setInputData ] = useState(initialState)
-	const { full_name, email, password, address, job_type, experience } = inputData
+	const { full_name, email, password, address, job_type, experience, confirmPass, phoneNumber } = inputData
 	console.log(isAuth, 'isAuth')
 
 	 useEffect(() => {
@@ -45,13 +47,15 @@ const SignUpProfessional = memo(({
     };
 
     const handleSubmit = (e) => {
-        if (!full_name || !email || !password || !address || !job_type || !experience ) {
-            return error('Complete all Fields!')
-        } else if (full_name.split(' ').length < 2) {
+        if (!full_name || !email || !password || !address || !job_type || !experience || !confirmPass ||!phoneNumber ) {
+            return error('please complete all fields!')
+		} else if (password !== confirmPass) {
+			return error("passwords don't match!")
+		} else if (full_name.split(' ').length < 2) {
             return error('please enter full name.')
         }
-        signUp(inputData)
-    }
+		signUp({ full_name, email, password, address, job_type, experience, phoneNumber })
+	}
 
     return (
 			<Fragment>
@@ -60,7 +64,9 @@ const SignUpProfessional = memo(({
 						<TopNav />
 						<div className="professional__main_caption">
 							<div> Kadoshi Professionals </div>
-							<div className='___link'> Already have an Account? <Link to='/signIn'> SIGN IN</Link> </div>
+							<div className="___link">
+								Already have an Account? <Link to="/signIn"> SIGN IN</Link>
+							</div>
 						</div>
 						<div className="professional__main_inputs">
 							<div>
@@ -102,8 +108,20 @@ const SignUpProfessional = memo(({
 											onChange={handleInputs}
 											value={experience}
 											name="experience"
-											type='number'
+											type="number"
 											placeholder="Years Of Experience"
+										/>
+									</InputGroup>
+									<InputGroup>
+										<InputLeftElement
+											children={<MdAccountBox size="20px" color="#fff" />}
+										/>
+										<Input
+											onChange={handleInputs}
+											value={phoneNumber}
+											name="phoneNumber"
+											type="number"
+											placeholder="Phone"
 										/>
 									</InputGroup>
 								</Stack>
@@ -132,6 +150,18 @@ const SignUpProfessional = memo(({
 											name="password"
 											type="password"
 											placeholder="Password"
+										/>
+									</InputGroup>
+									<InputGroup>
+										<InputLeftElement
+											children={<Icon name="lock" color="#fff" size="20px" />}
+										/>
+										<Input
+											onChange={handleInputs}
+											value={confirmPass}
+											name="confirmPass"
+											type="password"
+											placeholder="Confirm Password"
 										/>
 									</InputGroup>
 									<Select
@@ -196,7 +226,7 @@ const SignUpProfessional = memo(({
 				</div>
 			</Fragment>
 		);
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
     error: (message) => dispatch(errorMessage(message)),
