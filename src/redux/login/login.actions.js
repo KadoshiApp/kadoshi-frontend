@@ -17,7 +17,7 @@ export const isAuth = (payload) => ({
     payload
 });
 
-const loginProfSuccess = (data) => ({
+export const loginProfSuccess = (data) => ({
 	type: actionTypes.LOGIN_PROF_SUCCESS,
 	data,
 });

@@ -1,6 +1,7 @@
 import Axios from "../../Axios.config";
 import { loading } from "./../loading/loading.action";
 import { errorMessage, successMessage } from "../message/message.action";
+import { loginProfSuccess } from '../login/login.actions';
 
 
 export const FETCH_PROFESSIONALS_SUCCESS = 'FETCH_PROFESSIONALS_SUCCESS';
@@ -101,6 +102,7 @@ export const updateProfessional = (data) => async (dispatch) => {
 			...data
 		});
 		console.log(professional.data, "Professionals");
+		dispatch(loginProfSuccess(professional.data));
 		dispatch(successMessage(`${professional.data.message}`));
 		dispatch(loading(false));
 	} catch (err) {

@@ -14,7 +14,8 @@ const INITIAL_STATE = {
 const signUpProfReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case actionTypes.SIGNUPPROF_SUCCESS:
-			const { fullName, rating, ratingAvg, userSlug, joined, experience, comments } = action.payload;
+			console.log(action.data, 'data');
+			const { fullName, rating, ratingAvg, userSlug, joined, experience, comments } = action?.payload;
 			return {
 				...state,
                 rating,
@@ -30,7 +31,7 @@ const signUpProfReducer = (state = INITIAL_STATE, action) => {
 		case actionTypes.SIGNUPPROF_FAIL:
 			return {
 				...state,
-				errorMessage: action.message,
+				errorMessage: action?.message,
 			};
 
 		default:

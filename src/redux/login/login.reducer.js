@@ -24,7 +24,9 @@ const loginReducer = (state = INITIAL_STATE, action) => {
         
         case actionTypes.LOGIN_PROF_SUCCESS:
             console.log(action.data, 'actiondata')
-            const { fullName, ratingAvg, userSlug, experience, comment, profession  } = action.data.data;
+            const { 
+                fullName, ratingAvg, about, profilePhoto, userSlug, phoneNumber, location, experience, comments, profession
+            } = action.data.data;
 
             return {
                 ...state,
@@ -33,10 +35,13 @@ const loginReducer = (state = INITIAL_STATE, action) => {
                     ratingAvg,
                     userSlug,
                     experience,
-                    comment,
+                    comments,
+                    location,
                     profession,
+                    phoneNumber,
+                    profilePhoto,
+                    about,
                     joined: action.data.data.joined,
-                    location: action.data.data.state
                 }
             }
 

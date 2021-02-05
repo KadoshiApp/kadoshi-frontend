@@ -15,18 +15,18 @@ import './updateProfile.scss';
 
 const UpdateProfile = () => {
     const professionalData = useSelector((state) => state.loginReducer.profData);
-    const imgUrl = 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
+    const imgUrl = professionalData.profilePhoto || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
     const initialState = {
-        full_name: '',
-		category: '',
-		experience: '',
+        full_name: professionalData.fullName,
+		category: professionalData.location,
+		experience: professionalData.experience,
 		location: '',
 		comment: '',
 	};
     const dispatch = useDispatch();
     const [ inputData, setInputData ] = useState(initialState);
     const [ profilePic, setProfilePic ] = useState('');
-    const { full_name, comment, experience, category, location } = inputData
+    const { full_name, comment, experience, category, location } = inputData;
 
     // const fetchOnload = async () => {
     //     const professional = await Axios.init().get(`professional/${professionalData.userSlug}`); 
@@ -44,7 +44,7 @@ const UpdateProfile = () => {
 	};
 	
 	const handleSubmit = (e) => {
-        console.log(profilePic)
+        console.log(professionalData);
         if (!full_name || !location || !comment || !category || !experience ) {
             return dispatch(errorMessage('Complete all Fields!'))
         } else if (full_name.split(' ').length < 2) {

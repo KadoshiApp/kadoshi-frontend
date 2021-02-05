@@ -12,15 +12,15 @@ import './topNav.scss';
 
 const TopNav = () => {
     const [ showDrop, setShowDrop ] = useState(false);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const profUser = useSelector((state) => state.loginReducer?.profData?.userSlug);
     const user = useSelector((state) => state.signUpProfReducer?.userSlug);
-    const history = useHistory()
+    const history = useHistory();
 
     const logout  = () => {
-        dispatch(logoutUser())
-        dispatch(successMessage('Signout Successful!'))
-        history.push('/')
+        dispatch(logoutUser());
+        dispatch(successMessage('Signout Successful!'));
+        history.push('/');
     }
  
     let toggle = <div></div>
@@ -30,7 +30,7 @@ const TopNav = () => {
                 <div className='top__nav_toggle'>
                     { profUser || user ? <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div>: null }
                     <div onClick={logout}> SIGN OUT </div>
-                </div> 
+                </div>
             )
         } else {
             toggle = (
