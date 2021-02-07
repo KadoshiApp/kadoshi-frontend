@@ -14,7 +14,6 @@ const TopNav = () => {
     const [ showDrop, setShowDrop ] = useState(false);
     const dispatch = useDispatch();
     const profUser = useSelector((state) => state.loginReducer?.profData?.userSlug);
-    const user = useSelector((state) => state.signUpProfReducer?.userSlug);
     const history = useHistory();
 
     const logout  = () => {
@@ -28,7 +27,7 @@ const TopNav = () => {
         if (Auth.isAuthenticated() === true) {
             toggle = (
                 <div className='top__nav_toggle'>
-                    { profUser || user ? <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div>: null }
+                    { profUser ? <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div>: null }
                     <div onClick={logout}> SIGN OUT </div>
                 </div>
             )

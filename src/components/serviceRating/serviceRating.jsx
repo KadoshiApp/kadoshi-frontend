@@ -6,7 +6,7 @@ import ButtonSmall from "../buttonSmall/buttonSmall";
 const ProffesionalRating = ({data}) => {
   const [phone, setPhone] = useState(false)
   const [location, setLocation] = useState(false);
-  const imageUrl = data?.image || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
+  const imageUrl = data?.profilePhoto || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
   return (
     <div className="service_rating_container">
       <div className="service_rating">
@@ -31,7 +31,7 @@ const ProffesionalRating = ({data}) => {
             plain clicked={() => setPhone(!phone)} />
         </span>
         <span className="star_bottom_right">
-          <ButtonSmall caption={ location ? `${data?.state}` : 'Location' }
+          <ButtonSmall caption={ location ? `${data?.location}` : 'Location' }
             plain clicked={() => setLocation(!location)} />
         </span>
         </div>

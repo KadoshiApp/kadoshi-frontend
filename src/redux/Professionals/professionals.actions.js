@@ -102,8 +102,8 @@ export const updateProfessional = (data) => async (dispatch) => {
 			...data
 		});
 		console.log(professional.data, "Professionals");
-		dispatch(loginProfSuccess(professional.data));
-		dispatch(successMessage(`${professional.data.message}`));
+		dispatch(loginProfSuccess(professional?.data.professional));
+		dispatch(successMessage(`${professional?.data?.message}`));
 		dispatch(loading(false));
 	} catch (err) {
 		dispatch(loading(false));

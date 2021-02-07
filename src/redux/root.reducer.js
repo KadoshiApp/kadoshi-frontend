@@ -5,7 +5,6 @@ import storage from "redux-persist/lib/storage";
 import signUpCustomer from './signUpCustomer/signUp.reducer';
 import loadingReducer from './loading/loading.reducer';
 import messageReducer from './message/message.reducer';
-import signUpProfReducer from './signUpProffesional/signUpProf.reducers';
 import loginReducer from './login/login.reducer';
 import professionalReducer from './Professionals/professionals.reducer';
 import commentReducer from './comment/comment.reducer';
@@ -20,7 +19,6 @@ const rootReducer = combineReducers({
     signUpCustomer,
     loadingReducer,
     messageReducer,
-    signUpProfReducer,
     loginReducer,
     commentReducer,
     professionalReducer

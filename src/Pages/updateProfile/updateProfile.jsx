@@ -15,29 +15,17 @@ import './updateProfile.scss';
 
 const UpdateProfile = () => {
     const professionalData = useSelector((state) => state.loginReducer.profData);
-    const imgUrl = professionalData.profilePhoto || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
     const initialState = {
         full_name: professionalData.fullName,
-		category: professionalData.location,
+		category: professionalData.profession,
 		experience: professionalData.experience,
-		location: '',
-		comment: '',
+		location: professionalData.location,
+		comment: professionalData.about,
 	};
     const dispatch = useDispatch();
     const [ inputData, setInputData ] = useState(initialState);
-    const [ profilePic, setProfilePic ] = useState('');
     const { full_name, comment, experience, category, location } = inputData;
-
-    // const fetchOnload = async () => {
-    //     const professional = await Axios.init().get(`professional/${professionalData.userSlug}`); 
-    //     setProfData(professional.data.data)
-    //     console.log(professional);
-    //     console.log(profData);
-    // }
-
-    // React.useEffect(() => {
-    //     fetchOnload()
-    // }, [])
+    const imgUrl = professionalData.profilePhoto ||  'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png'
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -53,9 +41,8 @@ const UpdateProfile = () => {
         const updateBody = {
             full_name: full_name,
             experience: experience,
-            state: location,
-            location: category,
-            profilePicture: profilePic,
+            location,
+            profession: category,
             about: comment,
 		};
         dispatch(updateProfessional(updateBody));
@@ -77,7 +64,7 @@ const UpdateProfile = () => {
                 <div className='update__profile_body'>
                     <div className='update__profile_img'>
                         <div className='update__profile_overlay'>
-                            <Upload figure={uploadIcon} setUploadUrl={setProfilePic} />
+                            <Upload figure={uploadIcon} />
                         </div>
                         <img src={imgUrl} alt='' />
                     </div>
