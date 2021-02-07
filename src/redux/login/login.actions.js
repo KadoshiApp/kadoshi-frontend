@@ -17,7 +17,7 @@ export const isAuth = (payload) => ({
     payload
 });
 
-const loginProfSuccess = (data) => ({
+export const loginProfSuccess = (data) => ({
 	type: actionTypes.LOGIN_PROF_SUCCESS,
 	data,
 });
@@ -30,7 +30,7 @@ export const loginClient = data => async dispatch => {
         const login = await Axios.init().post('client/login', {
             ...newData
         })
-        dispatch(loginSuccess(login.data))
+        dispatch(loginSuccess(login.data.data))
         Auth.saveToken(login.data.token)
         dispatch(isAuth(true));
         dispatch(successMessage(login.data.message))

@@ -30,7 +30,7 @@ const ProfessionalsReducer = (state = INITIAL_STATE, action) => {
         case GET_PROFESSIONAL: 
             return {
                 ...state,
-                professionalData: action.data.data
+                professionalData: action?.data?.data
             }
 
         case GET_PROFESSIONAL_FAIL:

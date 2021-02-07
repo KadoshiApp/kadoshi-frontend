@@ -1,6 +1,5 @@
 import { commentActionTypes } from './comment.type';
 import Axios from '../../Axios.config';
-import Auth from '../../Auth.config';
 
 import { errorMessage, successMessage } from "../message/message.action";
 
@@ -22,7 +21,6 @@ export const loginComment = data => async dispatch => {
             ...body
         })
         dispatch(commentSuccess(comment.data))
-        Auth.saveToken(comment.data.token)
         dispatch(successMessage(comment.data.message))
         dispatch(loading(false))
     } catch (err) {

@@ -14,7 +14,7 @@ const AboutBody = () => {
           We aim to provide stress free services through professional artisians to our valued clients,
           from the comfort of their homes.
           Simply register and enjoy 24/7 service delivery from your mobile devices
-          to your doorsteps .
+          to your doorsteps.
         </p>
         <div className="home__head_btn">
           <ButtonBig caption="get started today!" />

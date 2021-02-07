@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
 
 import { loading } from '../../redux/loading/loading.action'
+import { updateProfessional } from "../../redux/Professionals/professionals.actions";
 import { errorMessage, successMessage } from '../../redux/message/message.action'
-import { useDispatch } from 'react-redux';
 import Axios from '../../Axios.config';
 
 import { DropzoneDialog } from "material-ui-dropzone";
 import Button from "@material-ui/core/Button";
 
-const DropzoneDialogExample = ({ figure, setUploadUrl, setWorkUrl, userSlug }) => {
+const DropzoneDialogExample = ({ figure, userSlug }) => {
 	const dispatch = useDispatch()
 	const [open, setOpen] = useState(false)
 	const [files, setFiles] = useState([]);
@@ -46,12 +47,7 @@ const DropzoneDialogExample = ({ figure, setUploadUrl, setWorkUrl, userSlug }) =
 				);
 				console.log(data);
 			} else {
-				const data = await Axios.init().put(`professional`, {
-					profilePicture: file.secure_url,
-				});
-				console.log(data.data);
-
-				setUploadUrl(file.secure_url)
+        		dispatch(updateProfessional({ profilePicture: file.secure_url }));
 			}
 			dispatch(successMessage('image uploaded!'))
 			dispatch(loading(false));

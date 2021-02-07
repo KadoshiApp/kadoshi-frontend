@@ -13,7 +13,7 @@ import './signIn.scss';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 
 const SignIn = () => {
-    const dispatch = useDispatch() 
+    const dispatch = useDispatch()
     const { push } = useHistory()
     const isAuth = useSelector((state) => state.loginReducer.isAuth);
 

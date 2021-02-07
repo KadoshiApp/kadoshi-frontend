@@ -11,6 +11,7 @@ import './professionalProfile.scss';
 function ProfessionalProfile({data}) {
     const history = useHistory()
     const dispatch = useDispatch()
+    const imgUrl = data?.profilePhoto || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png';
 
     const view = (user) => {
         if (user && Auth.getToken()) {
@@ -23,7 +24,7 @@ function ProfessionalProfile({data}) {
     return (
         <div className='service-profile-info'>
             <div className='profile-pic'>
-                <img src='https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png' className='profile-pic' alt="img"/>
+                <img src={imgUrl} className='profile-pic' alt="img"/>
             </div>
             <div className='profile-info'>
                 <div className='profile-name'>
