@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from 'react';
+import Auth from '../../Auth.config';
+import { Link, Redirect, useHistory } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
 import { loginClient, loginProf } from '../../redux/login/login.actions'
 
@@ -15,23 +16,28 @@ import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 const SignIn = () => {
     const dispatch = useDispatch()
     const { push } = useHistory()
-    const isAuth = useSelector((state) => state.loginReducer.isAuth);
-
     const initialState = {
         email: '',
         password: '',
         type: ''
     }
     const [ inputData, setInputData ] = useState(initialState)
+    const [render, setRender] = useState(false);
     const { email, password, type } = inputData
 
-    useEffect(() => {
-        if (isAuth) {
-            window.setTimeout(() => {
-                push("/services");
-            }, 1500);
-        }
-    }, [push, isAuth]);
+    if (Auth.isAuthenticated()) {
+        setTimeout(() => {
+        return <Redirect to="/services" />
+        }, 1500);
+    }
+
+    React.useEffect(() => {
+        setRender(!render)
+        setTimeout(() => {
+          return push('/services')
+        }, 1500);
+        setRender(false);
+    }, [push,render]);
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });

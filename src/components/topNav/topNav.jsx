@@ -27,7 +27,7 @@ const TopNav = () => {
         if (Auth.isAuthenticated() === true) {
             toggle = (
                 <div className='top__nav_toggle'>
-                    { profUser ? <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div>: null }
+                    { profUser && <div> <NavLink exact to='/profile'>UPDATE PROFILE</NavLink> </div> }
                     <div onClick={logout}> SIGN OUT </div>
                 </div>
             )

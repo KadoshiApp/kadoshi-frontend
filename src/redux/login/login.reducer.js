@@ -23,7 +23,6 @@ const loginReducer = (state = INITIAL_STATE, action) => {
             }
         
         case actionTypes.LOGIN_PROF_SUCCESS:
-            console.log(action.data, 'actiondata')
             const {
                 comments,
                 experience,

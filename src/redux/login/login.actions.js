@@ -55,7 +55,7 @@ export const loginProf = (data) => async (dispatch) => {
 		const login = await Axios.init().post('professional/login', {
 			...newData,
 		});
-        dispatch(loginProfSuccess(login.data));
+        dispatch(loginProfSuccess(login.data.data));
         Auth.saveToken(login.data.token);
         dispatch(isAuth(true))
 		dispatch(successMessage(login.data.message));
