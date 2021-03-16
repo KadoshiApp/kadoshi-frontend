@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Auth from '../../Auth.config';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
 import { loginClient, loginProf } from '../../redux/login/login.actions'
@@ -22,22 +21,7 @@ const SignIn = () => {
         type: ''
     }
     const [ inputData, setInputData ] = useState(initialState)
-    const [render, setRender] = useState(false);
     const { email, password, type } = inputData
-
-    if (Auth.isAuthenticated()) {
-        setTimeout(() => {
-        return <Redirect to="/services" />
-        }, 1500);
-    }
-
-    React.useEffect(() => {
-        setRender(!render)
-        setTimeout(() => {
-          return push('/services')
-        }, 1500);
-        setRender(false);
-    }, [push,render]);
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -48,10 +32,20 @@ const SignIn = () => {
             return dispatch(errorMessage('Fill all fields'))
         }
         if (email && password && type === 'Client(User)') {
-            return dispatch(loginClient({email, password}))
+            try {
+                dispatch(loginClient({email, password}))
+                setTimeout(() => push('/services'), 1500);
+            } catch (err) {
+                /* noop */
+            }
         }
         if (email && password && type === 'Professional(Service Provider)') {
-            return dispatch(loginProf({email, password}))
+            try {
+                dispatch(loginProf({email, password}))
+                setTimeout(() => push('/services'), 1500);
+            } catch (err) {
+                /* noop */
+            }
         }
     }
 

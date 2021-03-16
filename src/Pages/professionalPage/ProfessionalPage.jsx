@@ -40,7 +40,7 @@ function ProfessionalPage() {
         }
         
         if (inputData.location || inputData.product) {
-            dispatch(sortProfessionals(inputData))
+            dispatch(sortProfessionals({ profession: inputData.product, location: inputData.location }))
             setInputData({...inputData, product: '', location: ''})
         }
     }
