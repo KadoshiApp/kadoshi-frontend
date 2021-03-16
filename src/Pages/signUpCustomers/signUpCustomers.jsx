@@ -1,5 +1,5 @@
-import React, { Fragment, useState, memo, useEffect } from "react";
-import { connect, useSelector } from 'react-redux';
+import React, { Fragment, useState, memo } from "react";
+import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom'
 
 import { signUpCustomer } from '../../redux/signUpCustomer/signUp.actions'
@@ -28,17 +28,8 @@ const SignUpCustomers = memo(({
         confirmPassword: ''
     }
     const { push } = useHistory()
-    const isAuth = useSelector((state) => state.loginReducer.isAuth);
     const [ inputData, setInputData ] = useState(initialState)
     const { name, email, confirmEmail, phone, password, confirmPassword } = inputData
-    
-    useEffect(() => {
-        if (isAuth) {
-            window.setTimeout(() => {
-                push('/services') 
-            }, 1500);
-        }
-    }, [push, isAuth])
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value })
@@ -59,6 +50,10 @@ const SignUpCustomers = memo(({
             return error ('input valid number')
         }
         signUp({ full_name: name, email, number: phone, password });
+
+        window.setTimeout(() => {
+            push('/services') 
+        }, 1500);
     }
 
     return (

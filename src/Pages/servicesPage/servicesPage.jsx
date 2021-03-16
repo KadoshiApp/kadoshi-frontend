@@ -30,7 +30,7 @@ const ServicesPage = ({ match }) => {
     if (user && Auth.isAuthenticated()) {
       dispatch(viewProfessional(user));
 		}
-  }, [user, dispatch])
+  }, [user, dispatch]);
 
   const [ comment, setComment ] = useState('')
   const [ rating, setRating ] = useState(0);

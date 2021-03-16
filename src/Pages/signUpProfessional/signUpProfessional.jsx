@@ -54,7 +54,14 @@ const SignUpProfessional = memo(({
 		} else if (full_name.split(' ').length < 2) {
             return error('please enter full name.')
         }
-		signUp({ full_name, email, password, address, job_type, experience, phoneNumber })
+		try {
+			signUp({ full_name, email, password, address, job_type, experience, phoneNumber })
+			window.setTimeout(() => {
+				push("/services");
+			}, 1500);
+		} catch (err) {
+			/* noop */
+		}
 	}
 
     return (

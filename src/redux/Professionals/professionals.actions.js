@@ -53,8 +53,8 @@ export const fetchProfessionals = () => async dispatch => {
 export const sortProfessionals = (data) => async (dispatch) => {
 	dispatch(loading(true));
 	try {
-        const { product, location } = data
-		const professionals = await Axios.init().get(`professional?state=${location}?job_type=${product}`);
+        const { profession, location } = data
+		const professionals = await Axios.init().get(`professional?location=${location}&profession=${profession}`);
 		dispatch(successMessage('available professionals fetched'));
 		dispatch(fetchProfessionalsSuccess(professionals.data));
 		dispatch(loading(false));

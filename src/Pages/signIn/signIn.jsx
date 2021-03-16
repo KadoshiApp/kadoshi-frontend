@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { errorMessage } from "../../redux/message/message.action";
 import { loginClient, loginProf } from '../../redux/login/login.actions'
 
@@ -15,8 +15,6 @@ import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 const SignIn = () => {
     const dispatch = useDispatch()
     const { push } = useHistory()
-    const isAuth = useSelector((state) => state.loginReducer.isAuth);
-
     const initialState = {
         email: '',
         password: '',
@@ -24,14 +22,6 @@ const SignIn = () => {
     }
     const [ inputData, setInputData ] = useState(initialState)
     const { email, password, type } = inputData
-
-    useEffect(() => {
-        if (isAuth) {
-            window.setTimeout(() => {
-                push("/services");
-            }, 1500);
-        }
-    }, [push, isAuth]);
 
     const handleInputs = (e) => {
         setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -42,10 +32,20 @@ const SignIn = () => {
             return dispatch(errorMessage('Fill all fields'))
         }
         if (email && password && type === 'Client(User)') {
-            return dispatch(loginClient({email, password}))
+            try {
+                dispatch(loginClient({email, password}))
+                setTimeout(() => push('/services'), 1500);
+            } catch (err) {
+                /* noop */
+            }
         }
         if (email && password && type === 'Professional(Service Provider)') {
-            return dispatch(loginProf({email, password}))
+            try {
+                dispatch(loginProf({email, password}))
+                setTimeout(() => push('/services'), 1500);
+            } catch (err) {
+                /* noop */
+            }
         }
     }
 
