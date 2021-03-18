@@ -78,7 +78,6 @@ export const viewProfessional = (userSlug) => async (dispatch) => {
 		const professional = await Axios.init().get(
 			`professional/${userSlug}`
 		);
-		console.log(professional.data, "Professionals");
 		dispatch(successMessage(professional.data.message));
 		dispatch(getProfessional(professional.data));
 		dispatch(loading(false));

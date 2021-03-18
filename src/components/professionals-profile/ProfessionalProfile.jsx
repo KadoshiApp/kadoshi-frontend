@@ -9,12 +9,17 @@ import './professionalProfile.scss';
 
 
 function ProfessionalProfile({data}) {
+    const [access, setAccess] = React.useState(false);
     const history = useHistory()
     const dispatch = useDispatch()
     const imgUrl = data?.profilePhoto || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png';
 
+    React.useEffect(() => {
+      Auth.isAuthenticated() ? setAccess(true) : setAccess(false)
+    }, [history])
+
     const view = (user) => {
-        if (user && Auth.getToken()) {
+        if (user && access) {
             history.push(`/professional/${user}`)
         } else {
             dispatch(toggleAuthModal())

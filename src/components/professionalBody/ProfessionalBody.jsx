@@ -8,7 +8,6 @@ import './professionalBody.scss';
 
 const ProfessionalBody = ({values, change, clicked}) => {
     const professionalsArr = useSelector((state) => state.professionalReducer.professions);
-    console.log(professionalsArr)
 
     return (
         <div className='service-body-background'>
