@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import "./servicesPage.scss";
 import TopNav from "../../components/topNav/topNav";
 import { FooterThin, FooterWide } from "../../components/footer/footer";
@@ -26,10 +27,10 @@ const ServicesPage = ({ match }) => {
   const professionalData = useSelector((state) => state.professionalReducer.professionalData);
 
   useEffect(() => {
-    if (user && Auth.isAuthenticated()) {
+    if (user) {
       dispatch(viewProfessional(user));
 		}
-  }, [user, dispatch]);
+  }, [dispatch, user]);
 
   const [ comment, setComment ] = useState('')
   const [ rating, setRating ] = useState(0);

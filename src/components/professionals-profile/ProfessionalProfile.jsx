@@ -1,7 +1,7 @@
 import React from 'react'
 import Auth from '../../Auth.config';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleAuthModal } from '../../redux/loading/loading.action'
 import ReactStars from "react-rating-stars-component";
 
@@ -9,17 +9,13 @@ import './professionalProfile.scss';
 
 
 function ProfessionalProfile({data}) {
-    const [access, setAccess] = React.useState(false);
     const history = useHistory()
+    const auth = useSelector((state) => state.loginReducer.isAuth);
     const dispatch = useDispatch()
     const imgUrl = data?.profilePhoto || 'https://res.cloudinary.com/kadoshi/image/upload/v1608798891/mpg5arv2cdh3vl1vk89c.png';
 
-    React.useEffect(() => {
-      Auth.isAuthenticated() ? setAccess(true) : setAccess(false)
-    }, [history])
-
     const view = (user) => {
-        if (user && access) {
+        if (user && auth) {
             history.push(`/professional/${user}`)
         } else {
             dispatch(toggleAuthModal())

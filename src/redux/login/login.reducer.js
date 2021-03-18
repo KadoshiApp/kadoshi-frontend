@@ -1,4 +1,5 @@
 import { actionTypes } from "./login.types";
+import Auth from '../../Auth.config'
 
 const INITIAL_STATE = {
     email: '',
@@ -6,7 +7,7 @@ const INITIAL_STATE = {
     joined: '',
     slug: '',
     profData: {},
-    isAuth: false
+    isAuth: Auth.isAuthenticated()
 };
 
 const loginReducer = (state = INITIAL_STATE, action) => {

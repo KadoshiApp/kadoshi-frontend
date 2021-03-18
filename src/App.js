@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Auth from './Auth.config';
 
@@ -25,7 +26,7 @@ import IndeterminateProgressbar, {
 
 
 function App() {
-
+    const auth = useSelector((state) => state.loginReducer.isAuth);
 	let routes = (
 		<Switch>
 			<Route exact path="/" component={HomePage} />
@@ -42,7 +43,7 @@ function App() {
 		</Switch>
 	);
 
-	if (Auth.isAuthenticated()) {
+	if (auth) {
 		routes = (
 			<Switch>
 				<Route exact path="/" component={HomePage} />
