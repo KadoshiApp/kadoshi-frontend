@@ -34,8 +34,9 @@ const SignIn = () => {
         if (email && password && type === 'Client(User)') {
             try {
                 dispatch(loginClient({email, password}))
+                setTimeout(() => push('/services'), 1500);
             } catch (err) {
-                return
+                /* noop */
             }
         }
         if (email && password && type === 'Professional(Service Provider)') {
@@ -43,7 +44,7 @@ const SignIn = () => {
                 dispatch(loginProf({email, password}))
                 setTimeout(() => push('/services'), 1500);
             } catch (err) {
-                return 'no no'
+                /* noop */
             }
         }
     }
