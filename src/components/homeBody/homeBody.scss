@@ -1,152 +1,151 @@
+.home__body_caption {
+  margin: 3px 0;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
 .home__body_one {
-    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png), url(https://res.cloudinary.com/kadoshi/image/upload/v1603722165/PC/Illustration_1_ryyhzq.png);
-    height: 580px;
-    width: 95%;
-    margin: 0px auto;
-    background-position: right, left;
-    background-size: 60%, 50%;
-    background-repeat: no-repeat;
-    padding: 10px 0;
+  //   background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png),
+  //     url(https://res.cloudinary.com/kadoshi/image/upload/v1603722165/PC/Illustration_1_ryyhzq.png);
 
-    .home__body_caption {
-        margin: 3px 0;
-        text-align: center;
-        font-size: 2.2rem;
-        text-transform: uppercase;
+  background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722165/PC/Illustration_1_ryyhzq.png);
+  width: 85%;
+  margin: 0px auto;
+  background-position: left 6rem;
+  background-size: 25rem;
+  background-repeat: no-repeat;
+  padding: 2.3rem 0;
+
+  .home__body_one_container {
+    display: flex;
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: auto;
+    flex-direction: column;
+    margin-right: 8vw;
+    margin-top: 100px;
+
+    .home__body_onestep:nth-child(1) {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      span {
         color: #f87e59;
-        font-weight: 700;
+        display: block;
+      }
     }
-
-    .home__body_one_container {
-        display: flex;
-        width: 30%;
-        font-size: 1rem;
-        font-weight: 500;
-        margin-left: auto;
-        flex-direction: column;
-        margin-right: 15%;
-        margin-top: 100px;
-
-        .home__body_onestep:nth-child(1)  {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            span {
-                color: #f87e59;
-                display: block;
-            }
-        }
-    }
+  }
 }
 
 .home__body_two {
-    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722194/PC/Illustration_2_sxmgmj.png), url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
-    height: 500px;
-    width: 95%;
-    margin: 0px auto;
-    background-position: top right, bottom left;
-    background-size: 40%, 60%;
-    background-repeat: no-repeat;
-    padding: 10px 0;  
+  //   background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722194/PC/Illustration_2_sxmgmj.png),
+  //     url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
 
-    .home__body_two_container {
-        display: flex;
-        width: 30%;
-        font-size: 1rem;
-        font-weight: 500;
-        margin-right: auto;
-        flex-direction: column;
-        margin-left: 15%;
-        margin-top: 100px;
+  background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722194/PC/Illustration_2_sxmgmj.png);
+  width: 85%;
+  margin: 0px auto;
+  background-position: top right;
+  background-size: 20rem;
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 4rem 0;
+  .home__body_two_container {
+    display: flex;
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: auto;
+    flex-direction: column;
+    margin-top: 3rem;
 
-        .home__body_twostep:nth-child(1)  {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            span {
-                color: #f87e59;
-                display: block;
-            }
-        }
+    .home__body_twostep:nth-child(1) {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      span {
+        color: #f87e59;
+        display: block;
+      }
     }
+  }
 }
 
 ._body_three {
-    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722202/PC/Illustration_3_pmtxmd.png);
-    background-position: left;
-    background-size: 50%;
-
-    ._stepthree {
-        margin-top: 30%;
-    }
+  background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722202/PC/Illustration_3_pmtxmd.png);
+  background-position: left 5rem;
+  background-size: 19rem;
+  width: 85%;
 }
 
 @media screen and (max-width: 650px) {
-    .home__body_one {
-        background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717591/Illustration_1_dxbs25.png), url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
-        background-position: center, top right;
-        background-size: 90%, 100%;
-        height: 500px;
+  .home__body_one {
+    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717591/Illustration_1_dxbs25.png),
+      url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
+    background-position: center, top right;
+    background-size: 90%, 100%;
+    height: 500px;
 
-        .home__body_caption {
-            font-size: 1.2rem;
-        }
-
-        .home__body_one_container {
-            display: flex;
-            width: 85%;
-            font-size: 0.8rem;
-            margin: 60px auto;
-            flex-direction: column;
-            text-align: center;
-
-            .home__body_onestep:nth-child(1)  {
-                font-size: 1.2rem;
-                margin-top: -10%;
-                margin-bottom: 75%;
-                text-align: center;
-                span {
-                    color: #f87e59;
-                    display: inline;
-                }
-            }
-        }
+    .home__body_caption {
+      font-size: 1.2rem;
     }
 
-    .home__body_two {
-        background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717592/Illustration_2_dwuv0j.png), url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
-        background-position: top, top left;
-        background-size: 60%, 40%;
-        height: 400px;
+    .home__body_one_container {
+      display: flex;
+      width: 85%;
+      font-size: 0.8rem;
+      margin: 60px auto;
+      flex-direction: column;
+      text-align: center;
 
-         .home__body_two_container {
-            display: flex;
-            width: 80%;
-            font-size: 0.8rem;
-            margin: 0 auto;
-            flex-direction: column;
-            text-align: center;
-
-            .home__body_twostep:nth-child(1)  {
-                font-size: 1.2rem;
-                font-weight: 600;
-                margin-top: 0;
-                margin-bottom: 70%;
-                text-align: center;
-                span {
-                    color: #f87e59;
-                    display: inline;
-                }
-            }
+      .home__body_onestep:nth-child(1) {
+        font-size: 1.2rem;
+        margin-top: -10%;
+        margin-bottom: 75%;
+        text-align: center;
+        span {
+          color: #f87e59;
+          display: inline;
         }
+      }
     }
+  }
 
-    ._body_three {
-        background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717603/Illustration_3_smavcb.png);
-        margin-top: 40px;
-        height: 400px;
-        background-size: 70%;
-        background-position: center;
-        font-weight: 700;
+  .home__body_two {
+    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717592/Illustration_2_dwuv0j.png),
+      url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
+    background-position: top, top left;
+    background-size: 60%, 40%;
+
+    .home__body_two_container {
+      display: flex;
+      width: 80%;
+      font-size: 0.8rem;
+      margin: 0 auto;
+      flex-direction: column;
+      text-align: center;
+
+      .home__body_twostep:nth-child(1) {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 70%;
+        text-align: center;
+        span {
+          color: #f87e59;
+          display: inline;
+        }
+      }
     }
+  }
+
+  ._body_three {
+    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717603/Illustration_3_smavcb.png);
+    margin-top: 40px;
+    height: 400px;
+    background-size: 70%;
+    background-position: center;
+    font-weight: 700;
+  }
 }

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import Axios from '../../Axios.config';
-import { useDispatch } from "react-redux";
-import { errorMessage, successMessage } from "../../redux/message/message.action";
-import { loading } from '../../redux/loading/loading.action'
-import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { errorMessage, successMessage } from '../../redux/message/message.action';
+import { loading } from '../../redux/loading/loading.action';
+import { NavLink } from 'react-router-dom';
 import {
   Icon,
   Input,
@@ -11,16 +11,16 @@ import {
   InputRightElement,
   Stack,
   Select,
-} from "@chakra-ui/core";
-import { FooterThin } from "../../components/footer/footer";
+} from '@chakra-ui/core';
+import { FooterThin } from '../../components/footer/footer';
 
-import "./forgotPassword.scss";
+import './forgotPassword.scss';
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
   const initialState = {
-    email: "",
-    type: "",
+    email: '',
+    type: '',
   };
 
   const [inputData, setInputData] = useState(initialState);
@@ -31,28 +31,25 @@ const ForgotPassword = () => {
   };
 
   const onSubmit = async () => {
-    if (!email || !type) return dispatch(errorMessage("Fill all fields"));
-    if (!email) return dispatch(errorMessage("input your email address"));
-    if (!type) return dispatch(errorMessage("please select type"));
+    if (!email || !type) return dispatch(errorMessage('Fill all fields'));
+    if (!email) return dispatch(errorMessage('input your email address'));
+    if (!type) return dispatch(errorMessage('please select type'));
 
     if (email && type) {
       try {
-        dispatch(loading(true))
+        dispatch(loading(true));
         const data = await Axios.init().post(
-					"https://kadoshiservices.herokuapp.com/api/forgetpassword",
-					{ email, usertype: type.split("(")[0].toLowerCase() }
-				);
-        data.data.message && 
-        dispatch(successMessage("sent, check your mail."));
-				dispatch(loading(false));
+          'https://kadoshiservices.herokuapp.com/api/forgetpassword',
+          { email, usertype: type.split('(')[0].toLowerCase() }
+        );
+        data.data.message && dispatch(successMessage('sent, check your mail.'));
+        dispatch(loading(false));
       } catch (err) {
         dispatch(loading(false));
         dispatch(errorMessage(err.message));
       }
     }
   };
-
-
 
   return (
     <div className="forgot_password_container">
@@ -76,7 +73,7 @@ const ForgotPassword = () => {
           </InputGroup>
 
           <Select
-            placeholder='type'
+            placeholder="type"
             variant="outline"
             value={type}
             name="type"
@@ -95,8 +92,6 @@ const ForgotPassword = () => {
           </button>
         </div>
       </div>
-      <div></div>
-      <FooterThin />
     </div>
   );
 };
