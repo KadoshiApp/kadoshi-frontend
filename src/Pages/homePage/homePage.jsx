@@ -12,12 +12,6 @@ import { FooterWide } from '../../components/footer/footer';
 import './homePage.scss';
 
 const HomePage = () => {
-  const history = useHistory();
-
-  const getStarted = () => {
-    history.push('/account');
-  };
-
   return (
     <div>
       <div className="home__head">
@@ -25,9 +19,6 @@ const HomePage = () => {
         <HomeCaption />
       </div>
       <HomeBody />
-      <div className="home__head_btn">
-        <ButtonBig caption="get started today!" clicked={getStarted} />
-      </div>
       <FooterWide />
     </div>
   );

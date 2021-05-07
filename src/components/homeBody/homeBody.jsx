@@ -1,39 +1,46 @@
 import React, { Fragment } from 'react';
 import './homeBody.scss';
+import { Link } from 'react-router-dom';
 
 const HomeBody = () => {
   return (
     <Fragment>
-      <div className="home__body_caption"> Get started in the three simple steps! </div>
       <div className="home__body_one">
-        <div className="home__body_one_container">
-          <div className="home__body_onestep">
-            Step One:
-            <span>Get Registered!</span>
+        <div className="home__body_one_container steps">
+          <div className="home__body_onestep ">
+            Your Phone + our Website = a simpler life
           </div>
-          <div style={{ marginTop: '45px' }}>Register as a Professional or a client.</div>
+          <div>
+            <p>
+              We know you are always busy and need help with some task. We'll provide top
+              notch service for you. No stress
+            </p>
+            <Link to="/account">
+              <span>Open an account in minutes </span>
+            </Link>
+          </div>
         </div>
       </div>
 
       <div className="home__body_two">
-        <div className="home__body_two_container">
-          <div className="home__body_twostep">
-            Step Two:
-            <span>Request a Service!</span>
-          </div>
-          <div>Click to meet a vendor and check available services.</div>
+        <div className="home__body_two_container steps">
+          <div className="home__body_twostep">You get the best money can offer</div>
+          <p>
+            We carefully recruit our professionals.You'll get the professional that fit
+            your need.
+          </p>
         </div>
       </div>
 
       <div className="home__body_one _body_three">
-        <div className="home__body_one_container">
+        <div className="home__body_one_container  steps">
           <div className="home__body_onestep _stepthree">
-            Step Three: <span>Select Professional!</span>
+            Save time and as you rely on us.
           </div>
-          <div>
-            Chose your prefered professionals based on profile rating recomendation and
-            pictures of previous works.
-          </div>
+          <p>
+            We know how hard it is to find a competent professional. Just let us worry
+            that.
+          </p>
         </div>
       </div>
     </Fragment>

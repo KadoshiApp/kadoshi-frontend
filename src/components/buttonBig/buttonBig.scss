@@ -24,6 +24,7 @@ $color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   z-index: 1;
   padding: 15px 0;
+  color: #fff;
   &:after {
     content: '';
     position: absolute;
@@ -54,7 +55,7 @@ $color: rgba(0, 0, 0, 0.4);
 
 ._bigplain {
   background: #fff;
-  border: 3px solid rgb(253, 139, 59);
+  border: 3px solid transparent;
   padding: 13px 11px;
   border-radius: 6px;
   font-size: 1rem;

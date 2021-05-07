@@ -13,28 +13,21 @@
   width: 85%;
   margin: 0px auto;
   background-position: left 6rem;
-  background-size: 25rem;
+  background-size: 33rem;
   background-repeat: no-repeat;
   padding: 2.3rem 0;
-
+  padding-bottom: 13rem;
   .home__body_one_container {
     display: flex;
     width: 30%;
     font-size: 1rem;
-    font-weight: 500;
     margin-left: auto;
     flex-direction: column;
     margin-right: 8vw;
     margin-top: 100px;
-
     .home__body_onestep:nth-child(1) {
       font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 20px;
-      span {
-        color: #f87e59;
-        display: block;
-      }
     }
   }
 }
@@ -55,7 +48,6 @@
     display: flex;
     width: 30%;
     font-size: 1rem;
-    font-weight: 500;
     margin-right: auto;
     flex-direction: column;
     margin-top: 3rem;
@@ -148,4 +140,14 @@
     background-position: center;
     font-weight: 700;
   }
+}
+
+.steps {
+  p {
+    line-height: 27px;
+  }
+  span {
+    text-decoration: underline;
+  }
+  width: 26ch;
 }
