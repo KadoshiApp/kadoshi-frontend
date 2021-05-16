@@ -8,6 +8,7 @@ import { logoutUser } from '../../redux/login/login.actions';
 import { successMessage } from '../../redux/message/message.action';
 
 import './topNav.scss';
+import Logo from '../Logo/Logo';
 
 const TopNav = () => {
   const [showDrop, setShowDrop] = useState(false);
@@ -61,11 +62,7 @@ const TopNav = () => {
 
   return (
     <div className="top__nav">
-      <div className="top__nav_head">
-        <NavLink exact to="/">
-          Kadoshi
-        </NavLink>
-      </div>
+      <Logo />
       <div className="top__nav_links">
         <NavLink exact to="/">
           {' '}

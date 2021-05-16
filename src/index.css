@@ -1,3 +1,8 @@
+:root {
+  --clr-primary: rgb(253, 139, 59);
+  --clr-offset: #fff;
+  --clr-dark: #000;
+}
 body {
   margin: 0;
   font-family: 'Open Sans', 'sans-serif', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',

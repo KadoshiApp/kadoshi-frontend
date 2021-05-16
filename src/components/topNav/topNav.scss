@@ -1,26 +1,17 @@
 .top__nav {
-  width: 85%;
-  max-width: 100%;
-  padding: 1.2rem 0;
   display: flex;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: #fff;
+  box-shadow: 0px 0px 8px 1px #00000045;
+  padding-block: 1.2rem;
+  color: #000;
+  z-index: 99;
+  position: relative;
 
   a {
     text-decoration: none;
     color: #fff;
-  }
-
-  .top__nav_head {
-    display: flex;
-    background-color: #fff;
-    font-style: italic;
-    padding: 0.8rem 0.8rem;
-    border-radius: 50%;
-    a {
-      font-size: 0.9rem;
-      color: rgb(253, 139, 59);
-    }
   }
 
   .top__nav_links {
@@ -34,7 +25,7 @@
     a {
       margin-right: 4%;
       text-decoration: none;
-      color: #fff;
+      color: #000;
     }
 
     a:hover {

@@ -15,7 +15,7 @@ const HomeBody = () => {
               We know you are always busy and need help with some task. We'll provide top
               notch service for you. No stress
             </p>
-            <Link to="/account">
+            <Link to="/client">
               <span>Open an account in minutes </span>
             </Link>
           </div>
