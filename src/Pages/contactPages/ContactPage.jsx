@@ -13,8 +13,8 @@ const ContactPage = () => {
   const icona = <img src={Header} alt="header" />;
   return (
     <div>
+      <TopNav />
       <div className="contact-page">
-        <TopNav />
         <ContactCaption />
       </div>
       <ContactBody />
