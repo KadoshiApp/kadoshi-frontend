@@ -67,7 +67,7 @@ const TopNav = () => {
             {toggle}
           </div>
         ) : (
-          <ButtonSmall caption="Login" clicked={handleClick} />
+          <ButtonSmall caption="Log in" clicked={handleClick} />
         )}
       </div>
       <div className="hamburger">
@@ -98,9 +98,11 @@ const NavLists = () => {
       <NavLink exact to="/">
         Home
       </NavLink>
-      <NavLink exact to="/services">
-        Services
-      </NavLink>
+      {Auth.isAuthenticated() && (
+        <NavLink exact to="/services">
+          Services
+        </NavLink>
+      )}
       <NavLink exact to="/contact">
         Contact
       </NavLink>
