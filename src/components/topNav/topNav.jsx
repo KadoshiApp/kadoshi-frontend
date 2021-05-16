@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdCancel } from 'react-icons/md';
 import Auth from '../../Auth.config';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +11,11 @@ import { successMessage } from '../../redux/message/message.action';
 
 import './topNav.scss';
 import Logo from '../Logo/Logo';
+import ButtonSmall from '../buttonSmall/buttonSmall';
 
 const TopNav = () => {
   const [showDrop, setShowDrop] = useState(false);
+  const [showMobileNavList, setShowMobileNavList] = useState(false);
   const dispatch = useDispatch();
   const profUser = useSelector((state) => state.loginReducer?.profData?.userSlug);
   const history = useHistory();
@@ -40,48 +44,46 @@ const TopNav = () => {
       );
     } else {
       toggle = (
-        <div className="top__nav_toggle">
-          <div>
-            {' '}
-            <NavLink exact to="/signIn">
-              {' '}
-              Login
-            </NavLink>{' '}
-          </div>
-          <div>
-            {' '}
-            <NavLink exact to="/account">
-              {' '}
-              Sign Up{' '}
-            </NavLink>{' '}
-          </div>
+        <div>
+          <p> nothing</p>
         </div>
       );
     }
   }
+  const handleClick = () => {
+    history.push('/signIn');
+  };
 
   return (
     <div className="top__nav">
       <Logo />
       <div className="top__nav_links">
-        <NavLink exact to="/">
-          {' '}
-          Home{' '}
-        </NavLink>
-        <NavLink exact to="/services">
-          {' '}
-          Services
-        </NavLink>
-        <NavLink exact to="/about">
-          About{' '}
-        </NavLink>
-        <NavLink exact to="/contact">
-          {' '}
-          Contact
-        </NavLink>
-        <div onClick={() => setShowDrop(!showDrop)} className="top__nav_drop">
-          <FaUserAlt color="rgb(158, 158, 158)" />
-          {toggle}
+        <NavLists />
+      </div>
+      <div>
+        {Auth.isAuthenticated() ? (
+          <div onClick={() => setShowDrop(!showDrop)} className="top__nav_drop">
+            <FaUserAlt color="rgb(158, 158, 158)" />
+            {toggle}
+          </div>
+        ) : (
+          <ButtonSmall caption="Login" clicked={handleClick} />
+        )}
+      </div>
+      <div className="hamburger">
+        {!showMobileNavList ? (
+          <GiHamburgerMenu
+            size="2rem"
+            onClick={() => setShowMobileNavList(!showMobileNavList)}
+          />
+        ) : (
+          <MdCancel
+            size="2rem"
+            onClick={() => setShowMobileNavList(!showMobileNavList)}
+          />
+        )}
+        <div className={`hamburger-list ${showMobileNavList && ' hamburger-list-show'}`}>
+          <NavLists />
         </div>
       </div>
     </div>
@@ -89,3 +91,19 @@ const TopNav = () => {
 };
 
 export default TopNav;
+
+const NavLists = () => {
+  return (
+    <>
+      <NavLink exact to="/">
+        Home
+      </NavLink>
+      <NavLink exact to="/services">
+        Services
+      </NavLink>
+      <NavLink exact to="/contact">
+        Contact
+      </NavLink>
+    </>
+  );
+};
