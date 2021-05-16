@@ -14,8 +14,8 @@ import './homePage.scss';
 const HomePage = () => {
   return (
     <div>
+      <TopNav />
       <div className="home__head">
-        <TopNav />
         <HomeCaption />
       </div>
       <HomeBody />
