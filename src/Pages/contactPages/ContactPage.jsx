@@ -14,12 +14,8 @@ const ContactPage = () => {
   return (
     <div>
       <TopNav />
-      <div className="contact-page">
-        <ContactCaption />
-      </div>
       <ContactBody />
       <div className="contact_office">
-        <ContactOffice icon={icona} title=" Head Office" />
         <ContactOffice icon={icona} title=" Head Office" />
       </div>
       <div className="contact-button">

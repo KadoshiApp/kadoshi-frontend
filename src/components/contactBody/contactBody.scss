@@ -1,39 +1,38 @@
 @media screen and (max-width: 650px) {
-.contact-body {
+  .contact-body {
     background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603717604/Illustration_4_sqktqn.png),
-     url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png),
+      url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png),
       url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
-    height: 56vh;
+    height: 20rem;
     width: 100%;
     background-position: center, right, bottom left;
     background-size: 70%, 30%, 30%;
     background-repeat: no-repeat;
-}
-.contact_text {
-    text-align: center;
-    padding: 0 40px !important;
-    font-size: 15px !important;
-    font-weight: 500;
-}
-
+  }
 }
 
 .contact-body {
-    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722225/PC/Illustration_4_-_Contact_Us_mvkmzi.png),
-     url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png),
-      url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
-    height: 60vw;
-    width: 100%;
-    background-color: rgb(243,243,243);
-    background-position: center, right, bottom left;
-    background-size: 70%, 45%, 50%;
-    background-repeat: no-repeat;
+  background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722225/PC/Illustration_4_-_Contact_Us_mvkmzi.png),
+    url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png),
+    url(https://res.cloudinary.com/kadoshi/image/upload/v1603721822/PC/Circles_o040d6.png);
+  height: 21rem;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--clr-offset);
+  background-position: center, right, bottom left;
+  background-size: 70%, 45%, 50%;
+  background-repeat: no-repeat;
 }
 
-.contact_text {   
-    background-color: rgb(243,243,243);
-    padding-bottom: 30px;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
+.contact_text {
+  background-color: var(--clr-offset);
+  margin-top: 2rem;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 1rem;
+  width: calc(min(640px, 90%));
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }

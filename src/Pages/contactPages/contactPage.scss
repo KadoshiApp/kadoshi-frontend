@@ -1,7 +1,7 @@
 @media screen and (max-width: 650px) {
   .contact-page {
     // background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603717658/About_i94pti.png') !important;
-    background-color: #444;
+    background-color: var(--clr-offset);
     width: 100% !important;
     height: 350px !important;
     background-position: center !important;
@@ -11,8 +11,8 @@
 
 .contact-page {
   // padding-bottom: 60px;
-  background-color: #444;
   height: 355px;
+  background-color: var(--clr-offset);
   width: 100%;
   padding-bottom: 70px;
   // background-image: url("https://res.cloudinary.com/kadoshi/image/upload/v1603718224/PC/About_Us_Contact_Us_qorrn1.png");
@@ -24,19 +24,17 @@
   .contact_office {
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--clr-offset);
   }
 }
 
 .contact_office {
   display: flex;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
-  background-color: rgb(243, 243, 243);
 }
 
 .contact-button {
-  background-color: rgb(243, 243, 243);
+  background-color: var(--clr-offset);
   width: 100%;
   height: 10rem;
   display: grid;

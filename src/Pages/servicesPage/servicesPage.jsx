@@ -93,9 +93,9 @@ const ServicesPage = ({ match }) => {
   }
 
   return (
-    <div className="services_body">
+    <div>
+      <TopNav />
       <div className="services_body_cont">
-        <TopNav />
         <ServicesHead />
       </div>
       {professionalData && professionalData.userSlug === user && (

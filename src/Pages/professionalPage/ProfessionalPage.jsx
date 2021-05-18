@@ -94,8 +94,8 @@ function ProfessionalPage() {
   return (
     <>
       {authModal}
+      <TopNav />
       <div className="professional-page-header">
-        <TopNav />
         <ProfessionalCaption />
       </div>
       <ProfessionalBody
