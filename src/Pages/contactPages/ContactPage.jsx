@@ -1,6 +1,5 @@
 import React from 'react';
 import TopNav from '../../components/topNav/topNav';
-import ContactCaption from '../../components/contactCaption/ContactCaption';
 import ContactBody from '../../components/contactBody/ContactBody';
 import ButtonBig from '../../components/buttonBig/buttonBig';
 import ContactOffice from '../../components/contactOffice/ContactOffice';
