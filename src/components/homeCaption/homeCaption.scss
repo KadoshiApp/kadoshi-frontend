@@ -1,4 +1,5 @@
 .home__caption {
+  display: flex;
   width: 85%;
   max-width: 100%;
   margin: 0px auto;
@@ -6,7 +7,6 @@
 
   .home__caption_main {
     font-size: 3.6rem;
-    color: #fff;
     font-weight: 700;
   }
 
@@ -25,7 +25,12 @@
     }
   }
 }
-
+.home-caption-img {
+  width: calc(max(50%, 50vw));
+  img {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 650px) {
   .home__caption {
     margin: 0px auto;

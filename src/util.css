@@ -32,16 +32,19 @@
 .button-hover:hover {
   color: var(--clr-primary);
   background-color: var(--clr-offset);
-  padding: 2rem;
-  margin-top: 1.5rem;
-  border-width: 2px;
   box-shadow: none;
-  border-radius: 35px;
-  border-color: var(--clr-primary);
 }
 
 .flex-center {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* colour */
+.bg-offset {
+  background-color: var(--clr-offset);
+}
+.bg-offset-100 {
+  background-color: var(--clr-offset-100);
 }

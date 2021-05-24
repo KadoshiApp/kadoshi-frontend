@@ -11,7 +11,7 @@ import './contactPage.scss';
 const ContactPage = () => {
   const icon = <img src={Header} alt="header" />;
   return (
-    <div>
+    <div className="bg-offset">
       <TopNav />
       <ContactBody />
       <div className="contact_office">

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import ButtonSmall from '../buttonSmall/buttonSmall';
 import ButtonBig from '../buttonBig/buttonBig';
+import background1 from '../../images/workers.jpg';
 
 import './homeCaption.scss';
 
@@ -19,22 +20,20 @@ const HomeCaption = () => {
 
   return (
     <div className="home__caption">
-      <div className="home__caption_main">
-        {' '}
-        In-Demand <br /> Service Professionals{' '}
-      </div>
-      <div className="home__caption_aside"> at your fingertips! </div>
-      <div className="home__caption_btn">
-        <div>
-          <ButtonSmall caption="Hire Now!" clicked={hireNow} />
+      <div>
+        <div className="home__caption_main">
+          In-Demand <br /> Service Professionals
         </div>
-        {/* <div>
-                    <ButtonBig 
-                        caption='Join as a Professional' 
-                        plain
-                        clicked={joinNow}
-                    />
-                </div> */}
+        <div className="home__caption_aside"> at your fingertips! </div>
+
+        <div className="home__caption_btn">
+          <div>
+            <ButtonSmall caption="Hire Now!" clicked={hireNow} />
+          </div>
+        </div>
+      </div>
+      <div class="home-caption-img">
+        <img src={background1} />
       </div>
     </div>
   );

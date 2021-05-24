@@ -9,7 +9,7 @@
   border-radius: 7px;
   flex-direction: column;
   width: calc(max(15rem, 21vw));
-  width: calc(clamp(14rem, 21vw, 21rem));
+  width: calc(clamp(13rem, 21vw, 21rem));
   //   border: 1px solid #e0e0e0;
   //   box-shadow: 0 0 4px 1px #e0e0e070;
   padding: 0;
@@ -32,15 +32,15 @@
       margin-block: 0;
     }
     .name {
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      // font-weight: 700;
       margin-bottom: 0.5rem;
     }
     .profession {
       color: var(--clr-dark-900);
       font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
     // > div {
     //   margin-left: -0.7rem;

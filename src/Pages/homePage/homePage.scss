@@ -1,8 +1,9 @@
 .home__head {
   height: calc(95vh - 80px);
   width: 100%;
-  background-color: #555;
+  background-color: var(--clr-offset);
   //   background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722032/PC/Hero_Image_2_ei2r2r.png);
+  // background-image: url(/workers.eps);
   background-position: inherit;
   background-size: contain;
   background-repeat: round;

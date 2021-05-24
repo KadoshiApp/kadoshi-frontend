@@ -103,9 +103,6 @@ function ProfessionalPage() {
         change={handleInputs}
         clicked={searchClicked}
       />
-      <div className="page-button">
-        <ButtonBig caption="go home" clicked={goHome} />
-      </div>
       <FooterWide />
     </>
   );
