@@ -5,6 +5,7 @@ import ProfessionalOption from '../professionalOption/ProfessionalOption';
 import ProfessionalProfile from '../professionals-profile/ProfessionalProfile';
 
 import './professionalBody.scss';
+import ProfessionalCard from '../professionalCard/professionalCard';
 
 const ProfessionalBody = ({ values, change, clicked }) => {
   const professionalsArr = useSelector((state) => state.professionalReducer.professions);
@@ -17,8 +18,9 @@ const ProfessionalBody = ({ values, change, clicked }) => {
       </div>
       <div className="professional-view">Available Professionals </div>
       <div className="professional-data">
-        {professionalsArr.map((data, index) => (
-          <ProfessionalProfile data={data} key={index} />
+        {professionalsArr.map((data) => (
+          // <ProfessionalProfile data={data} key={index} />
+          <ProfessionalCard data={data} key={data.fullName} />
         ))}
       </div>
     </div>
