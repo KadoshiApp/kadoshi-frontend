@@ -1,7 +1,7 @@
 .home__head {
   height: calc(95vh - 80px);
   width: 100%;
-  background-color: var(--clr-offset);
+  background-color: var(--clr-offset-100);
   //   background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722032/PC/Hero_Image_2_ei2r2r.png);
   // background-image: url(/workers.eps);
   background-position: inherit;
@@ -14,25 +14,4 @@
   display: grid;
   place-items: center;
   margin-bottom: 60px;
-}
-
-@media screen and (max-width: 950px) {
-  .home__head {
-    background-image: url(https://res.cloudinary.com/kadoshi/image/upload/v1603722032/PC/Hero_Image_2_ei2r2r.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 40px;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .home__head {
-    background-image: url('https://res.cloudinary.com/kadoshi/image/upload/v1603717661/Hero_Image_Overlay_qs6q1h.png');
-    height: 550px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 40px;
-  }
 }

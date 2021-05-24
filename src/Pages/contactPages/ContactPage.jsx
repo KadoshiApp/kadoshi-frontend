@@ -17,9 +17,6 @@ const ContactPage = () => {
       <div className="contact_office">
         <ContactOffice icon={icon} title=" Head Office" />
       </div>
-      <div className="contact-button">
-        <ButtonBig caption="go home" />
-      </div>
       <FooterWide />
     </div>
   );

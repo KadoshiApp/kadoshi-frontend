@@ -1,7 +1,8 @@
 :root {
   --clr-primary: rgb(253, 139, 59);
   --clr-offset: #fff;
-  --clr-offset-100: #f7f4f4;
+  --clr-offset-100: ##fcfcfc;
+  --clr-offset-200: #f7f4f4;
   --clr-dark-900: #999;
   --clr-dark: #000;
 }

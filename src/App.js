@@ -18,9 +18,9 @@ import PasswordConfirmation from './components/passwordConfirmation/passwordConf
 import './App.css';
 import Message from './components/message/message'
 import IndeterminateProgressbar, {
-  IndeterminateProgressBarState,
-  ProgressBar,
-  ProgressSwitch,
+	IndeterminateProgressBarState,
+	ProgressBar,
+	ProgressSwitch,
 } from './components/progressBar/IndeterminateProgressbar';
 
 
@@ -37,7 +37,6 @@ function App() {
 			<Route exact path="/signUp" component={SignUpProfessional} />
 			<Route exact path="/client" component={SignUpCustomers} />
 			<Route exact path="/contact" component={ContactPage} />
-			<Route exact path="/services" component={ProfessionalPage} />
 			<Redirect to="/" />
 		</Switch>
 	);
@@ -60,14 +59,14 @@ function App() {
 		);
 	}
 
-  return (
+	return (
 		<div className="app">
 			<Message />
 			<IndeterminateProgressbar />
 			<Suspense fallback={<ProgressBar loading />}>
 				<IndeterminateProgressBarState />
 				<ProgressSwitch />
-			  	{routes}
+				{routes}
 			</Suspense>
 		</div>
 	);

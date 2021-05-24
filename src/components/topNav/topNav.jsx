@@ -98,11 +98,11 @@ const NavLists = () => {
       <NavLink exact to="/">
         Home
       </NavLink>
-      {/* {Auth.isAuthenticated() && ( */}
-      <NavLink exact to="/services">
-        Services
-      </NavLink>
-      {/* )} */}
+      {Auth.isAuthenticated() && (
+        <NavLink exact to="/services">
+          Services
+        </NavLink>
+      )}
       <NavLink exact to="/contact">
         Contact
       </NavLink>

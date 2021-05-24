@@ -48,3 +48,6 @@
 .bg-offset-100 {
   background-color: var(--clr-offset-100);
 }
+.bg-offset-200 {
+  background-color: var(--clr-offset-200);
+}

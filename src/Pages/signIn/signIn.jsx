@@ -2,22 +2,13 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { errorMessage } from '../../redux/message/message.action';
-import { loginClient, loginProf } from '../../redux/login/login.actions';
+import { loginClient } from '../../redux/login/login.actions';
 
-import {
-  Icon,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Stack,
-  Select,
-} from '@chakra-ui/core';
+import { Input, InputGroup } from '@chakra-ui/core';
 
-import TopNav from '../../components/topNav/topNav';
 import { FooterWide } from '../../components/footer/footer';
 
 import './signIn.scss';
-import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 import Logo from '../../components/Logo/Logo';
 
 const SignIn = () => {
@@ -37,20 +28,12 @@ const SignIn = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!email || !password || !type) {
+    if (!email || !password) {
       return dispatch(errorMessage('Fill all fields'));
     }
-    if (email && password && type === 'Client(User)') {
+    if (email && password) {
       try {
         dispatch(loginClient({ email, password }));
-        setTimeout(() => push('/services'), 1500);
-      } catch (err) {
-        /* noop */
-      }
-    }
-    if (email && password && type === 'Professional(Service Provider)') {
-      try {
-        dispatch(loginProf({ email, password }));
         setTimeout(() => push('/services'), 1500);
       } catch (err) {
         /* noop */
