@@ -1,105 +1,100 @@
 .professional-option {
-    justify-content: center;
-    padding-top: 30px;
+  justify-content: center;
+  padding-top: 30px;
 }
 
 .text-list {
-    font-size: 60px;
-    font-weight: 500;
+  font-size: 60px;
+  font-weight: 500;
 }
 
 .option-_header {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    margin: 3% auto 0;
-    
-    select {
-        border-radius: 0;
-        height: 46px;
-        width: 100%;
-        align-items: center;
-        font-size: 14px;
-        font-style: italic;
-        border-radius: 0 !important;
-    }
-    
-    select,
-    input {
-        background-color: #F9E6E0;
-        color: black;
-        outline:none;
-        border: 2px solid #f87e59;
-        border-radius: 8px;
-        
-        option {
-            background-color:  rgba(0, 0, 0, 0.3);
-            text-transform: uppercase;
-            font-style: normal;
-            font-family: Roboto;
-        }
-    }
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 3% auto 0;
 
-    select::placeholder, 
-    input::placeholder {
-        color: black;
-        font-size: 15px;
+  select {
+    border-radius: 0;
+    height: 46px;
+    width: 100%;
+    align-items: center;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  select,
+  input {
+    background-color: #f9e6e0;
+    color: black;
+    outline: none;
+    border: 2px solid #f87e59;
+    border-radius: 8px;
+
+    option {
+      background-color: rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      font-style: normal;
+      font-family: Roboto;
     }
-    
-    select:focus
-    input:focus {
-        background-color:  #F9E6E0;
-    }
+  }
+
+  select::placeholder,
+  input::placeholder {
+    color: black;
+    font-size: 15px;
+  }
+
+  select:focus input:focus {
+    background-color: #f9e6e0;
+  }
 }
 
 .professional__button {
-    margin: 20px 0 40px 0;
+  margin: 20px 0 40px 0;
 }
 
 @media screen and (max-width: 650px) {
-    .option-_header {
-        width: 75%;
-        flex-direction: column;
-        
-    }
-    .text-list {
-        font-size: 30px;
-        font-weight: 400;
-    }
+  .option-_header {
+    width: 75%;
+    flex-direction: column;
+  }
+  .text-list {
+    font-size: 30px;
+    font-weight: 400;
+  }
 
-        select {
-            height: 46px;
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-        
-        select,
-        input {
-            background-color: #F9E6E0;
-            color: black;
-            outline:none;
-            border: 2px solid #f87e59;
-            border-radius: 0 !important;
-            
-            option {
-                text-transform: uppercase;
-                font-style: normal;
-                font-family: Roboto;
-            }
-        }
-    
-        select::placeholder, 
-        input::placeholder {
-            color: black;
-            font-size: 15px;
-        }
-        
-        select:focus
-        input:focus {
-            background-color:  #F9E6E0;
-        }
-    
-    .professional__button {
-        margin: 20px 0 0px 0;
+  select {
+    height: 46px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  select,
+  input {
+    background-color: #f9e6e0;
+    color: black;
+    outline: none;
+    border: 2px solid #f87e59;
+
+    option {
+      text-transform: uppercase;
+      font-style: normal;
+      font-family: Roboto;
     }
+  }
+
+  select::placeholder,
+  input::placeholder {
+    color: black;
+    font-size: 15px;
+  }
+
+  select:focus input:focus {
+    background-color: #f9e6e0;
+  }
+
+  .professional__button {
+    margin: 20px 0 0px 0;
+  }
 }

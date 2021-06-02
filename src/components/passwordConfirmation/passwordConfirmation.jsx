@@ -1,62 +1,55 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { loading } from "../../redux/loading/loading.action";
-import Axios from "../../Axios.config";
-import { errorMessage, successMessage } from "../../redux/message/message.action";
-import { NavLink } from "react-router-dom";
-import {
-  Icon,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Stack,
-} from "@chakra-ui/core";
-import { FooterThin } from "../../components/footer/footer";
+import { loading } from '../../redux/loading/loading.action';
+import Axios from '../../Axios.config';
+import { errorMessage, successMessage } from '../../redux/message/message.action';
+import { NavLink } from 'react-router-dom';
+import { Icon, Input, InputGroup, InputRightElement, Stack } from '@chakra-ui/core';
+import { FooterThin } from '../../components/footer/footer';
 
-
-const PasswordConfirmation = ({location}) => {
+const PasswordConfirmation = ({ location }) => {
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
   const initialState = {
-		confirmPassword: "",
-		password: "",
-	};
+    confirmPassword: '',
+    password: '',
+  };
 
   const [inputData, setInputData] = useState(initialState);
   const { password, confirmPassword } = inputData;
 
   useEffect(() => {
-    if (!location.pathname.split("resetpassword/")[1])
-			return history.push("/");
-  }, [history, location.pathname ])
+    if (!location.pathname.split('resetpassword/')[1]) return history.push('/');
+  }, [history, location.pathname]);
 
   const handleInputs = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async () => {
-    if (!password || !confirmPassword) return dispatch(errorMessage('fill all fields.'))
-    if (password !== confirmPassword) return dispatch(errorMessage('passwords do not match'));
-    dispatch(loading(true))
+    if (!password || !confirmPassword) return dispatch(errorMessage('fill all fields.'));
+    if (password !== confirmPassword)
+      return dispatch(errorMessage('passwords do not match'));
+    dispatch(loading(true));
     try {
-      const query = location.pathname.split("resetpassword/")[1];
-      const userType = location.pathname.split("resetpassword/")[0];
-      const authArray = query.split("/");
+      const query = location.pathname.split('resetpassword/')[1];
+      const userType = location.pathname.split('resetpassword/')[0];
+      const authArray = query.split('/');
       const type = userType.split('/')[2];
       await Axios.init().post(
         `https://kadoshiservices.herokuapp.com/api/createpassword/${type}`,
         { password, token: authArray[1], id: authArray[0] }
       );
       dispatch(loading(false));
-      dispatch(successMessage('password successfully changed'))
+      dispatch(successMessage('password successfully changed'));
       setTimeout(() => {
-        history.push("/signIn");
+        history.push('/signIn');
       }, 3000);
     } catch (err) {
       dispatch(loading(false));
-      if (err.response.status === 500) return dispatch(errorMessage('an error occured!'))
-      dispatch(errorMessage(err.message))
+      if (err.response.status === 500) return dispatch(errorMessage('an error occured!'));
+      dispatch(errorMessage(err.message));
     }
   };
   return (
@@ -80,7 +73,7 @@ const PasswordConfirmation = ({location}) => {
             />
             <InputRightElement children={<Icon name="lock" color="#fff" />} />
           </InputGroup>
-            <div>Confirm New Password</div>
+          <div>Confirm New Password</div>
           <InputGroup>
             <Input
               placeholder="Confirm Password"
@@ -99,8 +92,6 @@ const PasswordConfirmation = ({location}) => {
           </button>
         </div>
       </div>
-      <div></div>
-      <FooterThin />
     </div>
   );
 };

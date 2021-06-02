@@ -1,0 +1,53 @@
+.button-hover {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  appearance: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  transition: all 250ms ease 0s;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  width: 100%;
+  line-height: 1.2;
+  border-radius: 1.625rem;
+  font-weight: 400;
+  height: 3rem;
+  min-width: 3rem;
+  font-size: 1.125rem;
+  background: var(--clr-primary);
+  color: var(--clr-offset);
+  padding: 2rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+  border-radius: 35px;
+  border-color: var(--clr-primary);
+  border-style: solid;
+}
+.button-hover:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-offset);
+  box-shadow: none;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* colour */
+.bg-offset {
+  background-color: var(--clr-offset);
+}
+.bg-offset-100 {
+  background-color: var(--clr-offset-100);
+}
+.bg-offset-200 {
+  background-color: var(--clr-offset-200);
+}
