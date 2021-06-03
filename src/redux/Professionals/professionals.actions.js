@@ -43,7 +43,7 @@ export const fetchProfessionals = () => async dispatch => {
             dispatch(fetchProfessionalsFail(err.response.data?.message))
             return
         } else if (err?.message) {
-            console.log(err.message);
+            // no op
             // dispatch(errorMessage(err.message));
         }
     }
@@ -65,7 +65,7 @@ export const sortProfessionals = (data) => async (dispatch) => {
 			dispatch(fetchProfessionalsFail(err.response.data?.message));
 			return;
 		} else if (err?.message) {
-			console.log(err.message);
+			// no op
 			// dispatch(errorMessage(err.message));
 		}
 	}
@@ -78,7 +78,6 @@ export const viewProfessional = (userSlug) => async (dispatch) => {
 		const professional = await Axios.init().get(
 			`professional/${userSlug}`
 		);
-		console.log(professional.data, "Professionals");
 		dispatch(successMessage(professional.data.message));
 		dispatch(getProfessional(professional.data));
 		dispatch(loading(false));
@@ -89,7 +88,7 @@ export const viewProfessional = (userSlug) => async (dispatch) => {
 			dispatch(getProfessionalFail(err.response.data?.message));
 			return;
 		} else if (err?.message) {
-			console.log(err.message);
+			// no op
 			// dispatch(errorMessage(err.message));
 		}
 	}
@@ -101,7 +100,6 @@ export const updateProfessional = (data) => async (dispatch) => {
 		const professional = await Axios.init().put(`professional`, {
 			...data
 		});
-		console.log(professional.data, "Professionals");
 		dispatch(loginProfSuccess(professional?.data.professional));
 		dispatch(successMessage(`${professional?.data?.message}`));
 		dispatch(loading(false));
@@ -111,7 +109,6 @@ export const updateProfessional = (data) => async (dispatch) => {
 			dispatch(errorMessage(err.response.data?.message));
 			return;
 		} else if (err?.message) {
-			console.log(err.message);
 			dispatch(errorMessage(err.message));
 		}
 	}

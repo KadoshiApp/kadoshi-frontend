@@ -12,11 +12,11 @@ import Button from "@material-ui/core/Button";
 const DropzoneDialogExample = ({ figure, userSlug }) => {
 	const dispatch = useDispatch()
 	const [open, setOpen] = useState(false)
-	const [files, setFiles] = useState([]);
+	// eslint-disable-next-line no-unused-vars
+	const [_, setFiles] = useState([]);
 
 	const handleClose = () => {
 		setOpen(false);
-		console.log(files);
 	}
 
 	const handleSave = (files) => {
@@ -41,13 +41,12 @@ const DropzoneDialogExample = ({ figure, userSlug }) => {
 			);
 			const file = await res.json();
 			if (figure === '+ add completed Work') {
-				const data = await Axios.init().put(
+				await Axios.init().put(
 					`https://kadoshiservices.herokuapp.com/api/professional/${userSlug}/works`,
 					{ url: file.secure_url }
 				);
-				console.log(data);
 			} else {
-        		dispatch(updateProfessional({ profilePicture: file.secure_url }));
+        dispatch(updateProfessional({ profilePicture: file.secure_url }));
 			}
 			dispatch(successMessage('image uploaded!'))
 			dispatch(loading(false));

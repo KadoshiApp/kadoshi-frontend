@@ -28,7 +28,7 @@ const ProfessionalCard = ({
   return (
     <button as="link" onClick={handleRoute} class="professional-card">
       <div>
-        <img src={imgUrl} />
+        <img src={imgUrl} alt='' />
       </div>
 
       <div className="professional-card-data">

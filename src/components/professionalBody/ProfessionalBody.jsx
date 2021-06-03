@@ -2,14 +2,12 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import ProfessionalOption from '../professionalOption/ProfessionalOption';
-import ProfessionalProfile from '../professionals-profile/ProfessionalProfile';
 
 import './professionalBody.scss';
 import ProfessionalCard from '../professionalCard/professionalCard';
 
 const ProfessionalBody = ({ values, change, clicked }) => {
   const professionalsArr = useSelector((state) => state.professionalReducer.professions);
-  console.log(professionalsArr);
 
   return (
     <div className="service-body-background">

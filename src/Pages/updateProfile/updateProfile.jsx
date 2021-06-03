@@ -6,7 +6,7 @@ import { errorMessage } from '../../redux/message/message.action';
 import { updateProfessional } from '../../redux/Professionals/professionals.actions';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { FooterThin, FooterWide } from '../../components/footer/footer';
+import { FooterWide } from '../../components/footer/footer';
 import TopNav from '../../components/topNav/topNav';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 
@@ -34,7 +34,6 @@ const UpdateProfile = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log(professionalData);
     if (!full_name || !location || !comment || !category || !experience) {
       return dispatch(errorMessage('Complete all Fields!'));
     } else if (full_name.split(' ').length < 2) {

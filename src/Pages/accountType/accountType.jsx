@@ -5,8 +5,6 @@ import { useHistory, Link } from 'react-router-dom';
 import { errorMessage } from '../../redux/message/message.action';
 
 import TopNav from '../../components/topNav/topNav';
-import { FooterThin } from '../../components/footer/footer';
-
 import { Select } from '@chakra-ui/core';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 

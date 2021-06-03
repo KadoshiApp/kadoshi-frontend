@@ -6,7 +6,6 @@ import Axios from '../../Axios.config';
 import { errorMessage, successMessage } from '../../redux/message/message.action';
 import { NavLink } from 'react-router-dom';
 import { Icon, Input, InputGroup, InputRightElement, Stack } from '@chakra-ui/core';
-import { FooterThin } from '../../components/footer/footer';
 
 const PasswordConfirmation = ({ location }) => {
   const dispatch = useDispatch();
