@@ -12,7 +12,6 @@ import {
   Stack,
   Select,
 } from '@chakra-ui/core';
-import { FooterThin } from '../../components/footer/footer';
 
 import './forgotPassword.scss';
 

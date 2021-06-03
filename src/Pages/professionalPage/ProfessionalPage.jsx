@@ -12,7 +12,7 @@ import { AiOutlineWarning } from 'react-icons/ai';
 import TopNav from '../../components/topNav/topNav';
 import ProfessionalCaption from '../../components/professionalCaption/ProfessionalCaption';
 import ProfessionalBody from '../../components/professionalBody/ProfessionalBody';
-import { FooterThin, FooterWide } from '../../components/footer/footer';
+import { FooterWide } from '../../components/footer/footer';
 import ButtonBig from '../../components/buttonBig/buttonBig';
 import ViewModal from '../../components/viewModal/viewModal';
 
@@ -48,10 +48,6 @@ function ProfessionalPage() {
       );
       setInputData({ ...inputData, product: '', location: '' });
     }
-  };
-
-  const goHome = () => {
-    history.push('/');
   };
 
   const signIn = () => {

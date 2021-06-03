@@ -7,8 +7,6 @@ import { errorMessage } from '../../redux/message/message.action';
 
 import { Input, InputGroup } from '@chakra-ui/core';
 
-import TopNav from '../../components/topNav/topNav';
-
 import './signUpCustomers.scss';
 import Logo from '../../components/Logo/Logo';
 

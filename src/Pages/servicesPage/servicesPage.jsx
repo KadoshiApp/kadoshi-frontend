@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './servicesPage.scss';
 import TopNav from '../../components/topNav/topNav';
-import { FooterThin, FooterWide } from '../../components/footer/footer';
+import { FooterWide } from '../../components/footer/footer';
 import Auth from '../../Auth.config';
 
 import { AiOutlineComment } from 'react-icons/ai';
@@ -28,10 +28,10 @@ const ServicesPage = ({ match }) => {
   );
 
   useEffect(() => {
-    console.log(professionalData);
     if (user && Auth.isAuthenticated()) {
       dispatch(viewProfessional(user));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, dispatch]);
 
   const [comment, setComment] = useState('');

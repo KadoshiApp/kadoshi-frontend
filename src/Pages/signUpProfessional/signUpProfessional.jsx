@@ -15,7 +15,6 @@ import { errorMessage } from '../../redux/message/message.action';
 import { signUpProf } from '../../redux/signUpProffesional/signUpProf.action';
 
 import TopNav from '../../components/topNav/topNav';
-import { FooterThin } from '../../components/footer/footer';
 import ButtonSmall from '../../components/buttonSmall/buttonSmall';
 
 import './signUpProfessional.scss';
@@ -45,7 +44,6 @@ const SignUpProfessional = memo(({ error, signUp }) => {
     confirmPass,
     phoneNumber,
   } = inputData;
-  console.log(isAuth, 'isAuth');
 
   useEffect(() => {
     if (isAuth) {

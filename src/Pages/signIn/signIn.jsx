@@ -20,7 +20,7 @@ const SignIn = () => {
     type: '',
   };
   const [inputData, setInputData] = useState(initialState);
-  const { email, password, type } = inputData;
+  const { email, password } = inputData;
 
   const handleInputs = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
